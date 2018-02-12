@@ -1,0 +1,102 @@
+<div class="wrap">
+<div class="main-top">
+  <div class="top-text">
+    <p>Название и оплата</p>
+  </div>
+  <div class="top-content">
+    <input  type="text" maxlength="15" required pattern="[a-zA-Z0-9]{2,}" [(ngModel)]="new_role.name" class="top-content-name top-content-input"  placeholder="Введите название" #role_name="ngModel"/>
+    <input type="text" required pattern="[0-9\.]{1,10}" [(ngModel)]="new_role.salary" class="top-content-salary top-content-input" placeholder="0 руб." #salary="ngModel"/>
+  </div>
+</div>
+<div class="main-middle">
+  <div class="middle-header">
+    <p>Личные параметры</p>
+  </div>
+  <div class="middle-content">
+    <div class="elem-middle-content">
+      <p>Рост(см):</p>
+      <input class="main-col-content" [(ngModel)]="parameters.growth" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Размер одежды:</p>
+      <input class="main-col-content" [(ngModel)]="parameters.clothsize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Обхват груди(см)</p>
+      <input class="main-col-content" [(ngModel)]="parameters.chestsize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Обхват талии(см)</p>
+      <input class="main-col-content" [(ngModel)]="parameters.waistsize" type="number">
+    </div>
+  </div>
+  <div class="middle-content">
+    <div class="elem-middle-content">
+      <p>Обхват бедер(см):</p>
+      <input class="main-col-content" [(ngModel)]="parameters.thighsize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Размер обуви:</p>
+      <input class="main-col-content" [(ngModel)]="parameters.footsize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Обхват шеи(см)</p>
+      <input class="main-col-content" [(ngModel)]="parameters.necksize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Обхват головы(см)</p>
+      <input class="main-col-content" [(ngModel)]="parameters.headsize" type="number">
+    </div>
+  </div>
+  <div class="middle-content">
+    <div class="elem-middle-content checkbox-content">
+      <p>Наличие тату:</p>
+      <input class="main-col-content" [(ngModel)]="parameters.tatu" type="checkbox">
+    </div>
+    <div class="elem-middle-content checkbox-content">
+      <p>Наличие пирсинга:</p>
+      <input class="main-col-content" [(ngModel)]="parameters.piercing" type="checkbox">
+    </div>
+    <div class="elem-middle-content">
+      <p>Тип внешности:</p>
+      <select class="main-col-content" [(ngModel)]="parameters.appearancetype">
+        <option *ngFor="let appearancetype of appearancetypes" value="{{appearancetype.id}}">{{appearancetype.name}}</option>
+      </select>
+    </div>
+    <div class="elem-middle-content">
+      <p>Цвет волос:</p>
+      <select class="main-col-content" [(ngModel)]="parameters.haircolor">
+        <option *ngFor="let haircolor of haircolors" value="{{haircolor.id}}">{{haircolor.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="middle-content">
+    <div class="elem-middle-content">
+      <p>Тип профессии:</p>
+      <select class="last-col-content" [(ngModel)]="parameters.employmenttype">
+        <option *ngFor="let employmenttype of employmenttypes" value="{{employmenttype.id}}">{{employmenttype.name}}</option>
+      </select>
+    </div>
+    <div class="elem-middle-content">
+      <p>Цвет глаз:</p>
+      <select class="last-col-content" [(ngModel)]="parameters.eyecolor">
+        <option *ngFor="let eyecolor of eyecolors" value="{{eyecolor.id}}">{{eyecolor.name}}</option>
+      </select>
+    </div>
+    <div class="elem-middle-content">
+      <p>Город:</p>
+      <select class="last-col-content" [(ngModel)]="parameters.city">
+        <option *ngFor="let city of citys" value="{{city.id}}">{{city.name}}</option>
+      </select>
+    </div>
+    <div class="elem-middle-content">
+      <p>Возраст:</p>
+      <input class="last-col-content" [(ngModel)]="parameters.age" type="number">
+    </div>
+  </div>
+</div>
+<div class="bot-content">
+  <button [disabled]="role_name.invalid || salary.invalid" class="create-role" (click)="submit(parameters, new_role)">Сохранить</button>
+</div>
+</div>
+

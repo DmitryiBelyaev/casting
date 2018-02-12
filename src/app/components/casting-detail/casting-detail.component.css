@@ -1,0 +1,583 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.content{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 25px 30px 30px 30px;
+}
+
+.header-casting-detail{
+    width: 100%;
+    height: 224px;
+    margin-top: 10px;
+}
+
+.casting-image{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: white;
+}
+
+.casting-image-img{
+    height: 100%;
+    width: 400px;
+    object-fit: cover;
+}
+
+.map{
+    width: 50%;
+    height: 100%;
+    float: left;
+   background-color: #dddddd;
+}
+
+.map iframe{
+}
+
+.map img{
+    width: 100%;
+    height: 100%;
+}
+
+.casting-name{
+    height: 50px;
+    background: white;
+
+}
+
+.casting-name input{
+  height: 25px;
+  outline: none;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: normal;
+  padding-left: 10px;
+}
+.casting-name-elem{
+  font-size: 14pt;
+  font-weight: bold;
+  display: block;
+  float: left;
+
+}
+
+.casting-type-elem{
+  display: block;
+  float: left;
+  margin-left: 20px;
+  padding-top: 4px;
+}
+
+.casting-type-elem-update{
+  display: block;
+  float: left;
+  margin-left: 30px;
+  padding-top: 2px;
+}
+.casting-type-elem-update select{
+  outline: none;
+  height: 25px;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+
+.middle-casting-content{
+    width: 100%;
+    height: 90px;
+}
+
+.left-middle-casting-content{
+    height: 90px;
+    width: 50%;
+    float: left;
+}
+.left-middle-casting-content textarea{
+  width: 100%;
+  height: 85px;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+  font-size: 8pt;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  resize: none;
+  white-space: pre-wrap;
+}
+
+.left-middle-casting-content p{
+    margin: 0;
+    font-size: 8pt;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.right-middle-casting-content{
+    height: auto;
+    width: 50%;
+    float: left;
+}
+
+.middle-event-content{
+    height: 30px;
+    width: 100%;
+    padding-left: 60px;
+}
+
+.middle-event-content-title{
+    width: 90px;
+    float: left;
+    margin-bottom: 0;
+}
+
+.middle-event-content-title.date-p{
+  width: 150px;
+  margin-bottom: 0;
+}
+
+.middle-event-content-title.time-p{
+  width: 130px;
+  margin-bottom: 0;
+}
+
+.middle-event-content-text{
+  float: right;
+  margin-bottom: 0;
+}
+
+.address-metro-input{
+  width: 220px;
+}
+
+.address-metro-input input{
+  width: 220px;
+}
+
+.middle-event-content-text input{
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  outline: none;
+  box-shadow: none;
+}
+
+.middle-event-content p{
+    display: block;
+    font-size: 8pt;
+    color: #999999;
+}
+
+
+.role-list{
+    width: 100%;
+    margin-top: 25px;
+    background: white;
+
+}
+
+.role-list p{
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.role-list-content{
+    min-height: 70px;
+    background: white;
+    border-top: 1px solid #f1f1f1;
+}
+
+.role-list-content-name{
+    width: 105px;
+    min-height: 70px;
+    height: 100%;
+    float: left;
+}
+.role-list-content-name td{
+    vertical-align: middle;
+}
+.role-list-content-name p{
+    font-size: 11pt;
+    font-weight: 700;
+    margin: 0;
+}
+
+.role-list-description{
+    min-height: 70px;
+    height: 100%;
+    width: 230px;
+    float: left;
+    margin: 0;
+    overflow: hidden;
+}
+
+.role-list-description tr{
+  width: 100%;
+  height: 100%;
+  /*overflow: hidden;*/
+}
+
+.role-list-description td{
+    vertical-align: middle;
+    height: 100%;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.role-list-description p{
+    white-space: nowrap;
+    width: 230px;
+    font-size: 8pt;
+    padding-top: 1px;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.role-list-salary{
+    min-height: 70px;
+    height: 100%;
+    width: 120px;
+    float: left;
+}
+
+.role-list-salary td{
+    vertical-align: middle;
+}
+
+.role-list-salary p{
+    font-weight: 700;
+    font-size: 10pt;
+    padding-top: 1px;
+    margin: 0;
+}
+
+.role-status{
+    float: left;
+    height: 100%;
+    min-height: 70px;
+    width: 105px;
+}
+
+.role-status td{
+    vertical-align: middle;
+}
+
+.role-status-text{
+    width: 105px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.role-status-text-open{
+  background-color: #0fbeed;
+}
+
+.role-status-text-close{
+  background-color: red;
+}
+
+.role-status-text p{
+    font-size: 8pt;
+    margin: 0;
+    padding-top: 3px;
+    color: white;
+}
+
+.role-employee-photo{
+    height: 70px;
+    width: 160px;
+    float: right;
+}
+
+.role-employee-img{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: #32e904;
+}
+
+.role-employee-img img{
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: 13px;
+}
+
+.update-casting:hover{
+  color:#666666;
+  text-decoration: underline;
+}
+
+.saveparameters:hover{
+  background: #ff5253;
+}
+
+.update-casting{
+  display: block;
+  float: right;
+  color: #999999;
+  font-size: 9pt;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.saveparameters-cancel:hover{
+  color: #666666;
+  text-decoration: underline;
+}
+
+.role-status-text-update:hover p{
+  color:#666666;
+  text-decoration: underline;
+}
+
+.saveparameters{
+  display: block;
+  float: right;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 15px;
+  background: red;
+  color: white;
+  width: 120px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.saveparameters.disabled{
+  cursor: auto;
+}
+
+.saveparameters-cancel{
+  display: block;
+  float: right;
+  cursor: pointer;
+  height: 30px;
+  color: #999999;
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 4px;
+  margin-right: 20px;
+}
+
+.role-invisible{
+  display: none;
+}
+
+.status-place{
+  float: right;
+  width: 150px;
+}
+
+.role-status-text-update{
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.role-status-text-update p{
+  margin-bottom: 0;
+  text-decoration: underline;
+  color: #999999;
+  font-size: 9pt;
+}
+
+.addrole{
+  text-align: center;
+  padding-top: 30px;
+  height: 120px;
+}
+
+.addrole p{
+  height: 30px;
+  width: 150px;
+  border-radius: 15px;
+  background: #0fbeed;
+  color: white;
+  padding-top: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.date-update::-webkit-outer-spin-button, /* Removes arrows */
+.date-update::-webkit-inner-spin-button, /* Removes arrows */
+.date-update::-webkit-clear-button { /* Removes blue cross */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.time-update::-webkit-outer-spin-button, /* Removes arrows */
+.time-update::-webkit-inner-spin-button, /* Removes arrows */
+.time-update::-webkit-clear-button { /* Removes blue cross */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.upload-photo-but [type=file]{
+  position: absolute;
+  display: block;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  filter: alpha(opacity=1);
+  cursor: pointer;
+  font-size: 0;
+  z-index: 2;
+}
+
+.pseudo-photo-but{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+  display: inline-block;
+}
+
+.upload-photo-but{
+  position: absolute;
+  overflow: hidden;
+  bottom: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hide_role_form{
+  width: 100px;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.hide_role_form p{
+  font-size: 10pt;
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.form-add-role{
+  width: 100%;
+  height: auto;
+  padding-top: 30px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.no-roles{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+.no-roles p{
+  color: #999999;
+  font-size: 10pt;
+}
+
+.no-address-map{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.no-address-map p{
+  font-size: 16pt;
+  color: #999999;
+  margin-top: 100px;
+}
+
+.role-edit{
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.role-desc-main{}
+
+.overlay-role-update{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 99998;
+  cursor: pointer;
+}
+
+.update-role-wrapp{
+  width: 800px;
+  height: 410px;
+  border-radius: 15px;
+  padding: 25px 30px;
+  position: fixed;
+  top:50%;
+  left: 50%;
+  margin-top: -205px;
+  margin-left: -407px;
+  z-index: 99999;
+  background-color: white;
+}
+
+.role-status-change-wrap{
+  float: right;
+  height: 100%;
+  min-height: 70px;
+  width: auto;
+}
+
+.role-status-change-text{
+  width: 105px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+
+}
+
+.role-status-change-text p{
+  cursor: pointer;
+  font-size: 9pt;
+  color: #999999;
+  text-decoration: underline;
+  margin-bottom: 0;
+  padding-top: 2px;
+}
+
+.role-status-change-text p:hover{
+  color: #333333;
+}
+
+.casting-input-name.ng-touched.ng-invalid{
+  border-color: red;
+}

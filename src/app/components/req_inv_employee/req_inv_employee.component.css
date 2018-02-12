@@ -1,0 +1,50 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.main-req-inv-menu{
+    width: 100%;
+    height: auto;
+}
+
+.header{
+    width: 100%;
+    height: 130px;
+    padding-top: 100px;
+    background-color: white;
+}
+
+.req-inv-menu{
+    height: 30px;
+    width: 100%;
+    padding-left: 35px;
+}
+
+.req-inv-menu-elem{
+    display: block;
+    width: auto;
+    height: 30px;
+    float: left;
+}
+
+.req-inv-menu p{
+    color: #333333;
+}
+
+.req-inv-menu-elem-invite{
+    margin-left: 35px;
+}
+
+.req-inv-menu-elem.active{
+    border-bottom: 1px solid red;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.req-inv-menu-elem:hover{
+    text-decoration: none;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+}

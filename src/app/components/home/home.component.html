@@ -1,0 +1,254 @@
+<div class="backround-layer">
+    <div class="circle"></div>
+    <div class="left-top-corner corner"></div>
+    <div class="left-bot-corner corner"></div>
+    <div class="right-top-corner corner"></div>
+    <div class="right-bot-corner corner"></div>
+    <div class="hor-center-line"></div>
+    <div class="ver-line ver-line-1"></div>
+    <div class="ver-line ver-line-2"></div>
+    <div class="ver-line ver-line-3"></div>
+    <div class="ver-line ver-line-4"></div>
+    <div class="ver-line-middle-top"></div>
+    <div class="ver-line-middle-bot"></div>
+</div>
+<div class="home_wrapper">
+    <div class="main_menu">
+        <div *ngIf="state != 0" (click)="toggle_empl(0)" class="logo logo-clickable left_part_menu">
+          <table>
+            <tr>
+              <td style="vertical-align: middle">
+                <img src="{{host}}static/img/logo.svg">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div *ngIf="state == 0" class="logo left_part_menu">
+          <table>
+            <tr>
+              <td style="vertical-align: middle">
+                <img src="{{host}}static/img/logo.svg">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <table class="left_part_menu-table">
+          <tr>
+            <td style="vertical-align: middle">
+              <div [ngClass]="{invisible: visibility_main}" (click)="toggle_empl(0)" class="back_to_main">
+                <p>&#8592; Вернуться на главную</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      <table class="right_part_menu right_part_menu-table">
+        <tr>
+          <td style="vertical-align: middle">
+            <div class="language right_part_menu">
+              <div class="change_language">
+                <p>EN</p>
+              </div>
+            </div>
+          </td>
+          <td style="vertical-align: middle">
+            <div class="account_question right_part_menu">
+              <p>Уже есть аккаунт?</p>
+            </div>
+          </td>
+          <td style="vertical-align: middle">
+            <div class="sign_in right_part_menu">
+              <div class="button_sign_in">
+                <a routerLink="/auth"><p>Войти</p></a>
+              </div>
+            </div>
+          </td>
+          <td style="vertical-align: middle">
+
+            <div class="sign_up right_part_menu">
+              <div class="button_sign_up">
+                <a [routerLink]="['/reg', state]"><p>Зарегистрироваться</p></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        </table>
+    </div>
+    <div class="wrapper">
+        <div class="left_part">
+            <div class="content_info content_info_main">
+                <div class="content_info_text main-info-text">
+                <div class="title_content_info">
+                    <p>Чип & Дейл - <br>
+                        <span>кастинговое агентство</span><br>
+                        полного цикла</p>
+                </div>
+                <div class="line_after_title_content_info"></div>
+                <div class="text_content_info">
+                    <p>
+                        Данный сайт - это ресурс, на котором размещаются кастинги Москвы, а также единая актуальная
+                        база актеров.
+                        Чип & Дейл - самый удобный ресурс для тех, кто заинтересован в съемках, от
+                        начинающих актеров до профессионалов.
+                    </p>
+                </div>
+                  </div>
+                <div class="buttons_content_info">
+                  <div (click)="toggle_empl(1)" class="im_actor_button">
+                    <p>Я - АКТЕР</p>
+                  </div>
+                  <div (click)="toggle_empl(2)" class="im_producer_button">
+                    <p>Я - РЕЖИССЕР</p>
+                  </div>
+                </div>
+            </div>
+        <div class="content_info content_info_employee">
+                <div class="content_info_text employee-info-text">
+                    <div class="title_content_info">
+                        <p>Актуальные кастинги и<br>
+                            возможности <span>каждый день</span></p>
+                    </div>
+                    <div class="line_after_title_content_info"></div>
+                    <div class="text_content_info_employee">
+                        <div class="employee-home-info">
+                            <img src="{{host}}static/img/folder.svg">
+                            <p class="title-home-employee-info">Большая база<br>актуальных кастингов</p>
+                            <p class="text-home-employee-info">Нет необходимости искать
+                                кастинги на множестве
+                                сторонних ресурсов - здесь Вы
+                                можете найти множество
+                                возможностей для себя.</p>
+                        </div>
+                        <div class="employee-home-info">
+                            <img src="{{host}}static/img/user.svg">
+                            <p class="title-home-employee-info">Индивидуальный<br>редактируемый пофиль</p>
+                            <p class="text-home-employee-info">Анкета, заполняемая Вами,
+                                содержит все самые важные
+                                параметры. Она видна для
+                                соискателей, а также вы можете
+                                сами отвечать ей на вакансии.</p>
+                        </div>
+                        <div class="employee-home-info employee-home-info-last">
+                            <img src="{{host}}static/img/604448.svg">
+                            <p class="title-home-employee-info">Быстрая и удобная<br>коммуникация</p>
+                            <p class="text-home-employee-info">Соискатели видят Ваши
+                                контактные данные. Вам также
+                                придет уведомление, если вас
+                                пригласят или утвердят на
+                                кастинг.</p>
+                        </div>
+                    </div>
+                </div>
+              <div class="buttons_content_info">
+                <div class="come_over" [routerLink]="['/reg', state]">
+                  <p>ПРИСОЕДИНИТЬСЯ</p>
+                </div>
+              </div>
+            </div>
+        <div class="content_info content_info_employer">
+                <div class="content_info_text employer-info-text">
+                    <div class="title_content_info">
+                        <p>Удобная и актуальная база<br>
+                            <span>актёров и моделей</span></p>
+                    </div>
+                    <div class="line_after_title_content_info"></div>
+                    <div class="text_content_info_employer">
+                        <div class="employee-home-info">
+                            <img src="{{host}}static/img/layers.svg">
+                            <p class="title-home-employee-info">Простой и понятный<br>интерфейс</p>
+                            <p class="text-home-employee-info">Войдите в систему, <span class="span-text-home-employee-info">оформите<br>
+                                подписку</span>, разместите вакансию
+                                и выбирайте лучших из лучших,
+                                или приглашайте актёров на
+                                кастинг самостоятельно.</p>
+                        </div>
+                        <div class="employee-home-info">
+                            <img src="{{host}}static/img/team.svg">
+                            <p class="title-home-employee-info">Поиск исполнителей<br>под любой проект</p>
+                            <p class="text-home-employee-info">"Чип & Дейл" позволяет Вам
+                                найти исполнителей на любой
+                                проект, будь то киносъёмка,
+                                рекламная съёмка, модельная
+                                съёмка или любая другая.</p>
+                        </div>
+                        <div class="employee-home-info">
+                            <img src="{{host}}static/img/604448.svg">
+                            <p class="title-home-employee-info">Быстрая и удобная<br>коммуникация</p>
+                            <p class="text-home-employee-info">После <span class="span-text-home-employee-info">оформления подписки</span>
+                                вам доступны все контактные
+                                данные актёров и моделей. Им
+                                также придут уведомления, если
+                                вы пригласите их на кастинг.</p>
+                        </div>
+                    </div>
+                </div>
+              <div class="buttons_content_info">
+                <div class="come_over" [routerLink]="['/reg', state]">
+                  <p>ПРИСОЕДИНИТЬСЯ</p>
+                </div>
+                <div class="about_sub" (click)="toggle_empl(3)">
+                  <p>ПОДРОБНЕЕ О ПОДПИСКЕ</p>
+                </div>
+              </div>
+            </div>
+        <div class="content_info content_info_employer_sub">
+                <div class="content_info_text employer-info-text sub-plans">
+                  <div class="title_content_info">
+                    <p>Планы <span>подписки</span></p>
+                  </div>
+                  <div class="line_after_title_content_info"></div>
+                  <div class="sub-plans-text">
+                    <p>Подписка предоставляет полный доступ к основным функциям сервиса,
+                    таким как просмотр контактов актеров, выставление рейтинга, а также
+                      отображения съёмок и кастингов режиссёра в общем каталоге.</p>
+                  </div>
+                  <div class="sub-plans-content">
+                    <div class="sub-plans-names">
+                      <div class="sub-plans-row sub-plans-row-first">
+                        <p>Подписка на <span>1 месяц</span></p>
+                      </div>
+                      <div class="sub-plans-row sub-plans-row-second">
+                        <p>Подписка на <span>3 месяца</span></p>
+                      </div>
+                      <div class="sub-plans-row sub-plans-row-third">
+                        <p>Подписка на <span>6 месяцев</span></p>
+                      </div>
+                    </div>
+                    <div class="sub-plans-price">
+                      <div class="sub-plans-price-row sub-plans-price-row-first">
+                        <p>1499 Руб.</p>
+                      </div>
+                      <div class="sub-plans-price-row sub-plans-price-row-second">
+                        <p>3999 Руб.</p><del>4499 Руб.</del>
+                      </div>
+                      <div class="sub-plans-price-row sub-plans-price-row-third">
+                        <p>7999 Руб.</p><del>8999 Руб.</del>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="buttons_content_info">
+                  <div class="come_over" [routerLink]="['/reg', state]">
+                    <p>ПРИСОЕДИНИТЬСЯ</p>
+                  </div>
+                  <div class="about_sub" (click)="toggle_empl(4)">
+                    <p>ВЕРНУТЬСЯ К ОПИСАНИЮ</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="contacts">
+            <img src="{{host}}static/img/telephone.svg">
+            <p>8 (800) 354-67-12</p>
+            <img src="{{host}}static/img/envelope.svg">
+            <p>chipdale@mail.com</p>
+        </div>
+        <div class="right_part">
+            <div class="main_photo">
+                <img class="corner-image" src="{{host}}static/img/corner.svg">
+                <img class="main-image" src="{{host}}static/img/kamera.png">
+                <img class="employee-image" src="{{host}}static/img/actor.png">
+                <img class="employer-image" src="{{host}}static/img/director.png">
+            </div>
+        </div>
+    </div>
+</div>

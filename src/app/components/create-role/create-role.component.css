@@ -1,0 +1,169 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.wrap{
+  background-color: white;
+  width: 100%;
+  height: auto;
+}
+.main-top {
+  height: 85px;
+  border-radius: 10px 10px 0 0 ;
+}
+
+.top-text{
+  height: 37px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.top-content-name{
+  display: block;
+  float: left;
+  outline: none;
+  box-shadow: none;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  height: 30px;
+  width: 300px;
+  padding-left: 10px;
+}
+
+.top-content-salary{
+  display: block;
+  float: left;
+  outline: none;
+  box-shadow: none;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  height: 30px;
+  width: 100px;
+  margin-left: 10px;
+  -moz-appearance: textfield;
+  padding-left: 10px;
+}
+.top-content-salary::-webkit-inner-spin-button {
+  display: none;
+}
+
+
+.main-middle{
+  height: 230px;
+}
+
+.middle-header{
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.middle-header p{
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.middle-content{
+  width: 185px;
+  height: 160px;
+  float: left;
+}
+
+.middle-content input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.middle-content input{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.main-col-content{
+  margin-right: 10px;
+}
+
+.middle-content.last-col-content{
+  padding-right: 0;
+}
+
+.elem-middle-content{
+  height: 40px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.elem-middle-content input {
+  display: block;
+  height: 20px;
+  float: right;
+  margin-top: 9px;
+  width: 50px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+
+}
+
+.elem-middle-content.checkbox-content input{
+  width: 20px;
+}
+
+.elem-middle-content input:focus{
+  outline: none;
+  text-decoration: none;
+  border: 1px solid black;
+}
+
+.elem-middle-content select{
+  display: block;
+  height: 20px;
+  float: right;
+  margin-top: 9px;
+  width: 50px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+}
+.middle-content p {
+  padding-top: 10px;
+  margin-bottom: 0;
+  display: block;
+  font-size: 10pt;
+  width: 120px;
+  float: left;
+}
+
+.bot-content{
+  height: 45px;
+  padding-top: 5px;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
+}
+
+.create-role{
+  height: 30px;
+  width: 150px;
+  background: #0fbeed;
+  color: white;
+  border-radius: 15px;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.create-role:hover{
+  background: #4bdcff;
+}
+
+.top-content-input.ng-touched.ng-invalid{
+  border-color: red;
+}
+
+.create-role:disabled{
+  cursor: auto;
+}
+.create-role:disabled:hover{
+  background: #0fbeed;
+}

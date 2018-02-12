@@ -1,0 +1,74 @@
+<div class="main-wrapp-body">
+<div class="main-wrapp-user">
+    <div class="main-menu">
+        <a class="menu-elem" routerLink="profile" routerLinkActive="active">
+            <img class="menu-elem-icon" src="{{host}}static/img/man-user.svg">
+            <p>Моя страница</p>
+        </a>
+        <a class="menu-elem" routerLink="inv_req" routerLinkActive="active">
+            <img class="menu-elem-icon" src="{{host}}static/img/mail.svg">
+            <p>Мои заявки</p>
+        </a>
+        <a class="menu-elem" routerLink="casting_list" routerLinkActive="active">
+            <img class="menu-elem-icon" src="{{host}}static/img/video-camera.svg">
+            <p>Мои съёмки</p>
+        </a>
+        <a class="menu-elem" routerLink="employees" routerLinkActive="active">
+            <img class="menu-elem-icon" src="{{host}}static/img/menu.svg">
+           <p>Каталог Актеров</p>
+        </a>
+        <a class="menu-elem" (click)="Guard_log_out()">
+            <img class="menu-elem-icon" src="{{host}}static/img/exit.svg">
+            <p>Выйти</p>
+        </a>
+        <div class="divide-line"></div>
+        <a class="menu-elem menu-elem-create-casting" routerLink="casting_create">
+            <p>+ Создать съемку</p>
+        </a>
+    </div>
+    <div class="main-body">
+        <div class="content-wrapp">
+            <router-outlet (activate)="switchfunc($event)"></router-outlet>
+        </div>
+        <div class="main-header">
+                <div class="header-logo">
+                    <img *ngIf="check == true" src="{{host}}static/img/logo_red.svg">
+                    <img *ngIf="check == false" src="{{host}}static/img/logo.svg">
+                </div>
+                <div class="header-user">
+                    <div class="header-user-elem header-user-avatar light-green" *ngIf="subscription && subscription.balance > 20">
+                        <img [src]=employer?.avatar>
+                    </div>
+                  <div class="header-user-elem header-user-avatar mid-green" *ngIf="subscription && subscription.balance < 21  && subscription.balance > 10">
+                    <img [src]=employer?.avatar>
+                  </div>
+                  <div class="header-user-elem header-user-avatar dark-green" *ngIf="subscription && subscription.balance < 11">
+                    <img [src]=employer?.avatar>
+                  </div>
+                  <div class="header-user-elem header-user-avatar dark-green" *ngIf="subscription == undefined">
+                    <img [src]=employer?.avatar>
+                  </div>
+                    <p *ngIf="check == true" class="header-user-elem header-user-name header-user-name-black">{{employer?.first_name}} {{employer?.last_name}}</p>
+                    <p *ngIf="check == false" class="header-user-elem header-user-name header-user-name-white">{{employer?.first_name}} {{employer?.last_name}}</p>
+                </div>
+        </div>
+    </div>
+    <div class="support">
+    </div>
+  <!--<p (click)="toggleSwitch()">Click</p>-->
+  <div class="notification-wrapp">
+    <notifi-app [target]="false"></notifi-app>
+  </div>
+</div>
+</div>
+<div class="out-overlay"  (click)="Guard_log_out()" *ngIf="visibility"></div>
+<div *ngIf="visibility" class="log_out-main">
+  <div class="main-log">
+    <p class="log-text">Вы уверены, </p>
+    <p class="log-text"> что хотите выйти?</p>
+    <div>
+      <p routerLink="/logout" class="Yes_log">Да</p>
+      <p (click)="Guard_log_out()" class="NO_log">Отмена</p>
+    </div>
+  </div>
+</div>

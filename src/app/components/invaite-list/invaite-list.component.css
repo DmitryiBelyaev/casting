@@ -1,0 +1,202 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.main-invite-list{
+    width: 100%;
+    height: auto;
+    background: transparent;
+}
+
+.content-invite-list{
+    width: 395px;
+    height: 190px;
+    float:left;
+    background: white;
+    margin-top: 10px;
+}
+.content-invite-list:nth-child(2n){
+    margin-left: 10px;
+}
+
+.content-invite-img-wrapp{
+    float: left;
+    width: 155px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content-invite-img-wrapp img{
+    display: block;
+    margin: auto;
+    min-width: 155px;
+    height: 100%;
+  object-fit: cover;
+}
+
+.content-invite-img-wrapp img:hover{
+    cursor: pointer;
+}
+
+.content-invite-text{
+    width: 240px;
+    height: 100%;
+    padding: 25px 30px;
+    float: left;
+}
+
+.employee-name{
+    width: 100%;
+    font-weight: 700;
+    font-size: 12pt;
+    display: block;
+    float: left;
+}
+
+.invite-on-role{
+    font-size: 8pt;
+    color: rgba(0,0,0,0.4);
+    margin-bottom: 0;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.casting-info-role-name{
+    font-size: 8pt;
+    display: block;
+    float: left;
+  margin-bottom: 2px;
+  cursor: pointer;
+  outline: none;
+}
+
+.casting-info-casting-name{
+    font-size: 8pt;
+    display: block;
+    float: left;
+    text-decoration: underline;
+  margin-bottom: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.quotes{
+    font-size: 8pt;
+    display: block;
+    float: left;
+  margin-bottom: 0;
+}
+
+.status-info{
+    width: 100%;
+    height: 15px;
+    float: left;
+  margin-top: 5px;
+}
+.status-info img{
+  height: 10px;
+  width: 10px;
+  display: block;
+  float: left;
+  margin-top: 7px;
+}
+
+.status-img{
+    display: block;
+    width: 10px;
+    height: 10px;
+    float:left;
+    margin-top: 2px;
+}
+
+
+.status-text{
+    font-size: 10pt;
+    display: block;
+    float: left;
+    margin-left: 5px;
+  margin-bottom: 0;
+}
+
+.button-cancel{
+    display: block;
+    width: 100px;
+    height: 25px;
+    background-color: #cccccc;
+    border-radius: 15px 15px;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+  cursor: pointer;
+}
+.button-cancel:hover{
+  background: #b6b6b6;
+}
+
+.button-cancel-text{
+    font-size: 10pt;
+    padding-top: 3px;
+    color: white;
+}
+
+
+
+.footer-text{
+  margin-top: 10px;
+  height: 30px;
+  width: 120px;
+  border-radius: 15px;
+  background: #0fbeed;
+  padding-top: 4px;
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+}
+
+.footer{
+  display: inline-block;
+  height: 40px;
+  background: white;
+  width: 100%;
+  text-align: center;
+}
+
+.color1{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #27d002;
+  text-align: center;
+  float: left;
+}
+
+.color2{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #41a82a;
+  text-align: center;
+  float: left;
+}
+
+.color3{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #58824f;
+  text-align: center;
+  float: left;
+}
+
+.color4{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #78824f;
+  text-align: center;
+  float: left;
+  margin-top: 1px;
+}
+.footer-text:hover{
+  background: #4bdcff;
+}

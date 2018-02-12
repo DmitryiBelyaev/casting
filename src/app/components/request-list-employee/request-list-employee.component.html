@@ -1,0 +1,40 @@
+<div class="main-request-list">
+    <div class="content-request-list" *ngFor="let request of requestsData">
+        <p class="casting-name" [routerLink]="['/employee/castingDetail', request['castingDetail']?.id]">{{request['castingDetail']?.name}}</p>
+        <p class="casting-date">{{request['castingDetail']?.date | date_converter}}</p>
+        <img class="casting-location-img" src="{{host}}static/img/placeholder-filled-point.svg">
+        <p class="casting-location">{{request['castingDetail']?.address}}</p>
+        <div class="casting-description-wrapp">
+            <p class="casting-description">{{request['castingDetail']?.description}}</p>
+        </div>
+        <p class="elem-bot-content-name">Роль:{{request['roleDetail']?.name}}</p>
+        <div class="status">
+            <p class="status-text">Статус: {{request['statusDetail']?.name}}</p>
+            <div class="status-buttons" *ngIf="request['statusDetail']?.status_id == 0">
+                <div class="ok but">
+                    <p (click)="changeStatus(request, 33)">Принять</p>
+                </div>
+                <div class="cancel but">
+                    <p (click)="changeStatus(request, 22)">Отклонить</p>
+                </div>
+            </div>
+            <div class="status-buttons" *ngIf="request['statusDetail']?.status_id == 22">
+                <div class="closed but">
+                    <p class="closed-invite">Отклонено</p>
+                </div>
+            </div>
+          <div class="status-buttons" *ngIf="request['statusDetail']?.status_id == 33">
+            <div class="accept but">
+              <p class="closed-invite">Вы приняли заявку</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  <div class="footer" *ngIf="next">
+    <p class="footer-text"  (click)="more()">показать еще</p>
+  </div>
+  <div class="footer"  *ngIf="next == null" style="background: transparent">
+
+  </div>
+</div>
+

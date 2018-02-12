@@ -1,0 +1,151 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.sub-wrapper{
+  /*margin: auto;*/
+  width: 366px;
+  height: 515px;
+  padding: 65px 50px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.title{
+  font-size: 20pt;
+  margin-bottom: 0;
+}
+
+.text{
+  font-size: 8pt;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  color: #a7a7a7;
+}
+
+.sub-var{
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 20px;
+  border: 1px solid #0fbeed;
+  background-color: white;
+  cursor: pointer;
+}
+
+.sub-var.choose{
+  background-color: #0fbeed;
+}
+
+.circle{
+  width: 12px;
+  height: 12px;
+  margin-top: 13px;
+  margin-left: 15px;
+  float: left;
+  border-radius: 6px;
+  border: 1px solid #0fbeed;
+}
+
+.circle.choose{
+  border: 1px solid white;
+  background-color: #0fbeed;
+}
+
+.round{
+  width: 6px;
+  height: 6px;
+  margin: auto;
+  margin-top: 2px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.var-text{
+  font-size: 10pt;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.var-text.choose{
+  color: white;
+}
+
+.var-price{
+  color: #0fbeed;
+  font-size: 10pt;
+  display: block;
+  float: right;
+  margin-bottom: 0;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.var-price.choose{
+  color: white;
+}
+
+.enter{
+  width: 210px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  margin-top: 50px;
+  border: none;
+  font-size: 11pt;
+  background-color: #fe181a;
+}
+
+.enter:focus, .enter:visited, .enter:active {
+  outline: none;
+}
+
+.enter:hover{
+  cursor: pointer;
+}
+
+.sub-wrapper-ok{
+  margin: auto;
+  width: 566px;
+  height: auto;
+  padding: 65px 50px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.ok-wrapp{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #0fbeed;
+  margin: auto;
+  text-align: center;
+}
+
+.ok-wrapp img{
+  width: 26px;
+  height: 26px;
+  margin-top: 8px;
+  filter: invert(1);
+}
+
+.sub-actuality{
+  font-size: 20pt;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.count-days{
+  font-size: 10pt;
+  color: #a7a7a7;
+  margin-top: 10px;
+}
+
+.count-days span{
+  color: #0fbeed;
+  margin-bottom: 50px;
+}

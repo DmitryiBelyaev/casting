@@ -1,0 +1,976 @@
+.header-employee-detail-page{
+    width: 100%;
+    height: 240px;
+    margin-top: 10px;
+}
+
+.avatar{
+    height: 240px;
+    width: 240px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    float: left;
+
+}
+
+.main-header-detail{
+    height: 240px;
+    padding: 25px 30px;
+    background: white;
+    float: left;
+    width: 560px;
+}
+
+.left-header-detail{
+    float: left;
+    width: 280px;
+}
+
+.right-header-detail{
+    width: 220px;
+    float: left;
+}
+
+.employee-gender-info{
+    width: 280px;
+    height: auto;
+    float: left;
+}
+
+.employee-contact-info{
+    width: 220px;
+    height: 160px;
+    float: left;
+}
+
+.employee-name{
+    margin-bottom: 0;
+    overflow: hidden;
+    float: left;
+}
+
+.employee-name p{
+    font-weight: bold;
+    margin: 0;
+    font-size: 14pt;
+}
+
+.employee-rating{
+    width: 30px;
+    height: 35px;
+    float: left;
+    margin-top: -5px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+.employee-rating img{
+    width: 100%;
+    height: 100%
+}
+
+.employee-rating p{
+    color: white;
+    font-size: 8pt;
+    margin-bottom: 0;
+    margin-top: -23px;
+    margin-left: -2px;
+}
+
+.gender-age-param{
+    float: left;
+    width: 100%;
+}
+
+.gender-age-param p{
+    font-size: 10pt;
+    color: #a7a7a7;
+    margin: 0;
+}
+
+.invite-on-casting{
+    width: 168px;
+    height: 30px;
+    margin-top: 0;
+    border-radius: 15px;
+    background: lightskyblue;
+    color: white;
+    display: block;
+    float: right;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.invite-on-casting p{
+    font-size: 10pt;
+    color: white;
+    padding-top: 5px;
+}
+
+.contact-info-title {
+    float: left;
+}
+
+.contact-info-title p{
+    margin: 0;
+    font-size: 10pt;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+.contact-info{
+    float: left;
+    width: 100%;
+}
+
+.contact-info p{
+    font-size: 10pt;
+    margin: 0;
+    float: left;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.contact-info img{
+    float: left;
+    width: 10px;
+    height: 10px;
+}
+
+.contact-info-email img{
+    margin-top: 16px;
+}
+
+.contact-info-phone img{
+    margin-top: 14px;
+}
+
+.info-employee{
+    height: 145px;
+    overflow: hidden;
+    text-align: left;
+    float: left;
+    width: 230px;
+    margin-top: 15px;
+}
+
+.info-employee-update{
+  height: 145px;
+  overflow: hidden;
+  text-align: left;
+  float: left;
+  width: 230px;
+}
+
+.employee-info-textarea{
+    height: 120px;
+    width: 230px;
+    outline: none;
+    box-shadow: none;
+    border-radius: 3px;
+    border: 1px solid #dddddd;
+    font-size: 10pt;
+    resize: none;
+    padding-left: 5px;
+}
+
+.description-title{
+    font-size: 10pt;
+    font-weight: 700;
+    margin: 0;
+}
+.description-text{
+    font-size: 10pt;
+    margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+}
+.info-employee-contacts{
+    height: auto;
+    float: left;
+    margin-top: 15px;
+}
+
+.info-employee-contacts-update{
+  height: auto;
+  float: left;
+  margin-top: 2px;
+}
+
+.main-middle{
+    padding: 25px 30px;
+    height: 250px;
+    background: white;
+}
+
+.middle-header{
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.middle-header p{
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.middle-content{
+    width: 185px;
+    height: 160px;
+    float: left;
+}
+
+.middle-content-update{
+  width: 185px;
+  height: 160px;
+  float: left;
+}
+
+.middle-content p{
+    padding-top: 10px;
+    margin-bottom: 0;
+    display: block;
+    font-size: 10pt;
+    float:left;
+}
+
+.middle-content-update p{
+  padding-top: 10px;
+  margin-bottom: 0;
+  display: block;
+  font-size: 10pt;
+}
+
+.piercing {
+    height: 30px;
+    width: 100%;
+
+}
+
+.piercing  p{
+    display: block;
+    float: left;
+}
+
+.tatu{
+    height: 30px;
+    width: 100%;
+
+}
+
+.tatu p {
+    display: block;
+    float: left;
+}
+
+.elem-middle-content{
+    height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.elem-middle-content-update{
+  padding-left: 10px;
+  height: 40px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.elem-middle-content-update.left-col{
+  padding-left: 0;
+}
+
+.photo-content{
+    width: 100%;
+    background: white;
+    height: 40px;
+}
+
+.photo-content .photo-title{
+    font-weight: bold;
+    font-size: 12pt;
+    padding-left: 30px;
+    margin: 0;
+    float: left;
+}
+
+.photo-content .photo-path{
+  font-size: 11pt;
+  float: right;
+  margin: 0;
+  padding-right: 30px;
+  padding-top: 2px;
+  text-decoration: underline;
+  cursor: default;
+}
+
+.photo-content .photo-full{
+  font-size: 11pt;
+  float: right;
+  margin: 0;
+  padding-right: 30px;
+  padding-top: 2px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.photo-content-box{
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(auto-fill, 191px);
+  grid-auto-rows: 150px;
+}
+
+.photo-content-box-path{
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns:  repeat(4, 191px);
+  grid-template-rows: 150px
+
+}
+.photo-elem-box{
+  width: 100%;
+  height: 100%;
+}
+
+.photo-elem-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-main{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+}
+
+.portfolio-text{
+    width: 100%;
+    margin-top: 25px;
+    height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.portfolio-title{
+    font-weight: bold;
+    font-size: 12pt;
+    float: left;
+    display: block;
+}
+
+.portfolio-count{
+    font-weight: 400;
+    font-size: 11pt;
+    text-decoration: underline;
+    float: right;
+    display: block;
+}
+
+.portfolio-elem{
+    height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.path-portfolio-info{
+    float: left;
+}
+
+.path-portfolio-info p{
+    padding-top: 10px;
+    font-size: 10pt;
+}
+
+.portfolio-date{
+    width: 208px;
+}
+
+.portfolio-date p{
+    color: #999999;
+}
+
+.portfolio-name{
+    width: 264px;
+}
+
+.portfolio-name p{
+    font-weight: 700;
+}
+
+.portfolio-description{
+    width: 264px;
+}
+.portfolio-description p{}
+
+.edit-profile{
+   float: right;
+   cursor: pointer;
+ }
+
+.edit-profile p{
+  font-size: 10pt;
+  text-decoration: underline;
+  color: #333333
+}
+.edit-profile:hover p{
+  color: #666666;
+  text-decoration: underline;
+}
+
+.edit-profile-button{
+  float: right;
+  cursor: pointer;
+}
+
+.edit-profile-button p{
+  font-size: 10pt;
+}
+
+.elem-middle-content input {
+  display: block;
+  height: 20px;
+  float: right;
+  margin-right: 10px;
+  width: 50px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+}
+
+.elem-middle-content-update input{
+  display: block;
+  height: 20px;
+  float: right;
+  width: 50px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+  text-align: center;
+}
+
+.elem-middle-content select {
+  display: block;
+  height: 20px;
+  float: right;
+  margin-right: 10px;
+  width: 50px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+}
+
+.elem-middle-content-update select{
+  display: block;
+  height: 20px;
+  float: right;
+  width: 50px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+}
+
+.employee-name-update{
+  margin-bottom: 0;
+  overflow: hidden;
+  float: left;
+}
+
+.employee-name-update p{
+  font-weight: bold;
+  margin: 0;
+  font-size: 14pt;
+}
+
+.employee-name-update select, input{
+  display: block;
+  float: left;
+  width: 110px;
+  box-shadow: none;
+  outline: none;
+  height: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 0px;
+}
+
+.employee-name-first{
+  margin-right: 10px;
+}
+
+.contact-info input{
+  display: block;
+  float: left;
+  width: 200px;
+  box-shadow: none;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  height: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+
+.profile-update-button{
+  width: 200px;
+  height: 28px;
+  text-align: center;
+  background: red;
+  color: white;
+  border-radius: 14px;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+  padding-top: 1px;
+  border-style: initial;
+}
+.profile-update-button:hover{
+  background: #ff5253;
+  outline: none;
+}
+
+.gender-age-param-update{
+  margin-top: 7px;
+  width: 230px;
+  height: 20px;
+  float: left;
+}
+
+.gender-age-param-update p{
+  font-size: 10pt;
+  color: #999999;
+  float: left;
+  margin-bottom: 0;
+}
+
+.gender-input{
+  width: 15px;
+  height: 15px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.gender-age-param-update label{
+  font-size: 10pt;
+  float: left;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.birthday-wrapp{
+  width: 230px;
+  margin-top: 7px;
+  float: left;
+  margin-bottom: 3px;
+}
+
+.birthday-wrapp p{
+  float: left;
+  font-size: 10pt;
+  color: #999999;
+  margin-bottom: 0px;
+}
+
+.birthday{
+  float: right;
+  width: 120px;
+  font-size: 9pt;
+}
+
+.birthday::-webkit-outer-spin-button,
+.birthday::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.birthday {
+  -moz-appearance: textfield;
+}
+
+.birthday::-webkit-calendar-picker-indicator {
+  color: transparent;
+  opacity: 1;
+  background: url(http://cdn.onlinewebfonts.com/svg/img_299672.png) no-repeat center;
+  background-size: contain;
+}
+
+.elem-middle-content-update .checbox-update{
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-top: 10px;
+}
+
+.middle-content .content-data{
+  float: left;
+  padding-left: 10px;
+}
+
+.add_portfolio{
+  margin-top: 40px;
+  height: 30px;
+  width: 100%;
+}
+
+.close_portfolio{
+  margin-top: 20px;
+  height: 30px;
+  width: 100%;
+}
+
+.add_portfolio_but{
+  width: 170px;
+  text-align: center;
+  background-color: #0fbded;
+  border-radius: 15px;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+}
+.add_portfolio_but:hover{
+  background: #4bdcff;
+}
+
+.add_portfolio_but p{
+  margin-bottom: 0px;
+  font-size: 11pt;
+  padding-top: 5px;
+  color: white;
+}
+
+.portfolio_form_wrap.visible{
+  display: none;
+}
+
+.portfolio_form_wrap{
+  height: 70px;
+  border-bottom: 1px solid #e8e8e8;
+  padding-top: 10px;
+}
+
+.hide_portfolio_form_but{
+  width: 270px;
+  text-align: center;
+  height: 30px;
+  margin: auto;
+}
+
+.but_create{
+  width: 140px;
+  text-align: center;
+  background-color: #0fbded;
+  border-radius: 15px;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+  float: left;
+}
+
+.but_close{
+  width: 110px;
+  text-align: center;
+  background-color: red;
+  border-radius: 15px;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+  float: right;
+}
+
+.but_close p{
+  margin-bottom: 0px;
+  font-size: 11pt;
+  padding-top: 5px;
+  color: white;
+}
+
+.but_create p{
+  margin-bottom: 0px;
+  font-size: 11pt;
+  padding-top: 5px;
+  color: white;
+}
+
+.portfolio-date{
+}
+
+.date_start_portfolio_p{
+  width: 100%;
+  font-size: 10pt;
+  display: block;
+  float: left;
+  margin-bottom: 0;
+}
+
+.date_finish_portfolio_p{
+  width: 100%;
+  font-size: 10pt;
+  display: block;
+  float: left;
+  margin-bottom: 0;
+}
+.date_start_portfolio{
+  width: 100%;
+  font-size: 10pt;
+  display: block;
+  float: left;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #a0a0a0;
+}
+
+.date_start_portfolio::-webkit-outer-spin-button,
+.date_start_portfolio::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.date_start_portfolio {
+  -moz-appearance: textfield;
+}
+
+.date_start_portfolio::-webkit-calendar-picker-indicator {
+  color: transparent;
+  opacity: 1;
+  background: url(http://cdn.onlinewebfonts.com/svg/img_299672.png) no-repeat center;
+  background-size: contain;
+}
+
+.date_finish_portfolio{
+  width: 100%;
+  font-size: 10pt;
+  display: block;
+  float: left;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #a0a0a0;
+}
+
+.date_finish_portfolio::-webkit-outer-spin-button,
+.date_finish_portfolio::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.date_finish_portfolio {
+  -moz-appearance: textfield;
+}
+
+.date_finish_portfolio::-webkit-calendar-picker-indicator {
+  color: transparent;
+  opacity: 1;
+  background: url(http://cdn.onlinewebfonts.com/svg/img_299672.png) no-repeat center;
+  background-size: contain;
+}
+
+.name_portfolio_p{
+  width: 100%;
+  display: block;
+  float: left;
+  margin-bottom: 0;
+}
+
+.name_portfolio{
+  width: 100%;
+  float: left;
+}
+
+.role_portfolio_p{
+  width: 100%;
+  float: left;
+  margin-bottom: 0;
+}
+
+.role_portfolio{
+  width: 100%;
+  float: left;
+}
+
+.elem-new-portfolio{
+  height: auto;
+  float: left;
+  width: 25%;
+  padding-right: 20px;
+}
+
+.new_portfolio_input{
+  margin-top: 10px;
+}
+
+.add_photo{
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.add_photo_but{
+  margin: auto;
+  border-radius: 15px;
+  background-color: #0fbeed;
+  outline: none;
+  cursor: pointer;
+  height: 30px;
+  width: 150px;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+.photo-but-photo-wrapp:hover .add_photo_but{
+  background: #4bdcff;
+}
+.add_photo_but p{
+  color: white;
+  font-size: 11pt;
+  margin-bottom: 0px;
+  padding-top: 5px;
+}
+
+.profile-update-cancel{
+  color: #333333;
+  text-decoration: underline;
+  float: right;
+  font-size: 10pt;
+  padding-right: 10px;
+}
+
+.profile-update-cancel:hover{
+  color: #666666;
+  text-decoration: underline;
+}
+
+.upload-photo-but [type=file]{
+  position: absolute;
+  display: block;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  filter: alpha(opacity=1);
+  cursor: pointer;
+  font-size: 0;
+  z-index: 2;
+}
+
+.pseudo-photo-but{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+  display: inline-block;
+}
+
+.upload-photo-but{
+  position: absolute;
+  overflow: hidden;
+  bottom: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.photo-but-photo{
+  font-size: 0;
+  opacity: 0;
+  filter: alpha(opacity=1);
+  margin: auto;
+  position: absolute;
+  height: 30px;
+  width: 150px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.photo-but-photo-wrapp{
+  margin: auto;
+  outline: none;
+  cursor: pointer;
+  height: 30px;
+  width: 150px;
+  margin-top: 20px;
+  position: relative;
+  border-radius: 15px;
+}
+
+.confirm_account_but, .confirm_account_but:hover, .confirm_account_but:focus, .confirm_account_but:visited, .confirm_account_but:active{
+  height: 30px;
+  width: 170px;
+  text-align: center;
+  background-color: red;
+  margin-top: 10px;
+  border-radius: 15px;
+  border: none;
+  float: left;
+  cursor: pointer;
+  font-size: 9pt;
+  margin-bottom: 0;
+  color: white;
+  padding-top: 0px;
+  outline: none;
+}
+.confirm_account_but:disabled{
+  cursor: auto;
+  outline: none;
+}
+
+.confirm_account_input{
+  height: 30px;
+  width: 260px;
+  margin-top: 10px;
+  border-radius: 15px;
+  float: left;
+  outline: none;
+  font-size: 9pt;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid #c2c2c2;
+  margin-right: 20px;
+}
+
+.confirm_account_input.ng-touched.ng-invalid{
+  border-color: red;
+}
+
+.main-confirm{
+  width: 100%;
+  height: auto;
+  padding: 25px 30px;
+  display: inline-block;
+}
+
+.confirm-title{
+  font-weight: bold;
+  font-size: 12pt;
+  float: left;
+  display: block;
+}
+
+.confirm-text{
+  font-size: 10pt;
+  float: left;
+  display: block;
+}
+
+.but_create:hover{
+  background: #4bdcff;
+}
+
+.but_close:hover{
+  background: #ff5253;
+}

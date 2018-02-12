@@ -1,0 +1,169 @@
+<div class="wrapp">
+    <div class="header">
+        <img class="background-image" src="{{host}}static/img/actorhead.png">
+        <div class="search-title">
+            <p>Ищите конкретного актера?</p>
+        </div>
+        <div class="search">
+            <div class="search-wrapp">
+                    <div class="search-input">
+                        <input type="text" placeholder="Введите имя" name="search" value="" [(ngModel)]="filter_search">
+                    </div>
+                    <div class="search-button" (click)="search(filter_search)">
+                        <img src="{{host}}static/img/search.png">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="filters">
+        <div class="filter-select">
+                <select name="gender" (change)="change_gender(gender_id)" [(ngModel)]="gender_id">
+                    <option [value]="0">Любого пола</option>
+                    <option [value]="32">Мужчины</option>
+                    <option [value]="33">Женщины</option>
+                </select>
+        </div>
+        <div class="filter-order-wrap">
+            <div class="filter-order">
+                <p class="order-date order-elem" (click)="change_order('date')" [class.active]="active_order">
+                    Новые актеры
+                </p>
+                <p class="order-rating order-elem" (click)="change_order('rating')" [class.active]="!active_order">
+                    По рейтингу
+                </p>
+            </div>
+        </div>
+        <div class="filter-param" *ngIf="!bigsearch">
+          <p (click)="toggleBigSearch()">Расширенный поиск</p>
+        </div>
+        <div class="filter-param" *ngIf="bigsearch">
+          <p (click)="toggleBigSearch()">Свернуть</p>
+        </div>
+    </div>
+  <div class="main-search-filter" *ngIf="bigsearch">
+    <div class="top-main-search-filter">
+      <div class="filter-main-text">Параметры актера:</div>
+      <div class="button-search" (click)="searchGlobalFilter(searchparameters, tatu, piercing)"><img src="{{host}}static/img/search-white.png"><p>Искать</p></div>
+    </div>
+    <div class="main-middle">
+      <div class="middle-content">
+        <div class="elem-middle-content">
+          <p>Рост(см):</p>
+          <input [(ngModel)]="searchparameters.growth" type="number">
+        </div>
+        <div class="elem-middle-content">
+          <p>Размер одежды:</p>
+          <input [(ngModel)]="searchparameters.clothsize" type="number">
+        </div>
+        <div class="elem-middle-content">
+          <p>Обхват груди(см)</p>
+          <input [(ngModel)]="searchparameters.chestsize" type="number">
+        </div>
+        <div class="elem-middle-content">
+          <p>Обхват талии(см)</p>
+          <input [(ngModel)]="searchparameters.waistsize" type="number">
+        </div>
+      </div>
+      <div class="middle-content">
+        <div class="elem-middle-content">
+          <p>Обхват бедер(см):</p>
+          <input [(ngModel)]="searchparameters.thighsize" type="number">
+        </div>
+        <div class="elem-middle-content">
+          <p>Размер обуви:</p>
+          <input [(ngModel)]="searchparameters.footsize" type="number">
+        </div>
+        <div class="elem-middle-content">
+          <p>Обхват шеи(см)</p>
+          <input [(ngModel)]="searchparameters.necksize" type="number">
+        </div>
+        <div class="elem-middle-content">
+          <p>Обхват головы(см)</p>
+          <input [(ngModel)]="searchparameters.headsize" type="number">
+        </div>
+      </div>
+      <div class="middle-content">
+        <div class="elem-middle-content checkbox-content">
+          <p>Наличие тату:</p>
+          <input [(ngModel)]="tatu" type="checkbox">
+        </div>
+        <div class="elem-middle-content checkbox-content">
+          <p>Наличие пирсинга:</p>
+          <input [(ngModel)]="piercing" type="checkbox">
+        </div>
+        <div class="elem-middle-content">
+          <p>Тип внешности:</p>
+          <select [(ngModel)]="searchparameters.appearancetype">
+            <option *ngFor="let appearancetype of appearancetypes" value="{{appearancetype.id}}">{{appearancetype.name}}</option>
+          </select>
+        </div>
+        <div class="elem-middle-content">
+          <p>Цвет волос:</p>
+          <select [(ngModel)]="searchparameters.haircolor">
+            <option *ngFor="let haircolor of haircolors" value="{{haircolor.id}}">{{haircolor.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="middle-content last-col-content">
+        <div class="elem-middle-content">
+          <p>Тип профессии:</p>
+          <select [(ngModel)]="searchparameters.employmenttype">
+            <option *ngFor="let employmenttype of employmenttypes" value="{{employmenttype.id}}">{{employmenttype.name}}</option>
+          </select>
+        </div>
+        <div class="elem-middle-content">
+          <p>Цвет глаз:</p>
+          <select [(ngModel)]="searchparameters.eyecolor">
+            <option *ngFor="let eyecolor of eyecolors" value="{{eyecolor.id}}">{{eyecolor.name}}</option>
+          </select>
+        </div>
+        <div class="elem-middle-content">
+          <p>Город:</p>
+          <select [(ngModel)]="searchparameters.city">
+            <option *ngFor="let city of citys" value="{{city.id}}">{{city.name}}</option>
+          </select>
+        </div>
+        <div class="elem-middle-content">
+          <p>Возраст:</p>
+          <input [(ngModel)]="searchparameters.age" type="number">
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="content">
+      <div *ngIf="emplList?.length > 0">
+        <div class="elem-content" *ngFor="let employee of emplList">
+            <div [routerLink]="['/employer/employeeDetail', employee?.id ]" class="elem-img">
+                <img [src]=employee?.avatar>
+            </div>
+            <div class="elem-text">
+                <p class="first-text">{{employee?.first_name}}</p>
+                <p class="last-text">{{employee?.last_name}}</p>
+            </div>
+            <div class="invite" (click)="inviteActive(employee?.id)">
+                <img src="{{host}}static/img/white_plus.png">
+            </div>
+            <div class="rating">
+                <img *ngIf="employee?.rating >= 7" src="{{host}}static/img/10-7.svg">
+                <img *ngIf="employee?.rating > 4 && employee?.rating < 7" src="{{host}}static/img/7-4.svg">
+                <img *ngIf="employee?.rating <= 4" src="{{host}}static/img/4-0.svg">
+                <p>{{employee?.rating}}</p>
+            </div>
+        </div>
+      </div>
+      <div *ngIf="emplList?.length == 0">
+        <p>По вашему запросу ничего не найдено</p>
+      </div>
+    </div>
+  <div class="footer" *ngIf="next">
+    <p class="footer-text"  (click)="more()">показать еще</p>
+  </div>
+  <div class="footer"  *ngIf="next == null" style="background: transparent">
+  </div>
+</div>
+<div [ngClass]="{visible: invite_active}" (click)="inviteDeactive()" class="overlay-invite"></div>
+<invite-create-detail-app (invisible)="notifi_emit()" [employee_id]="invite_employee_id" (invite_active)="inviteDeactive()" [ngClass]="{visible: invite_active}" class="invite-create-detail-app"></invite-create-detail-app>
+
+<div class="notifi-messages" [ngClass]="{visible: invisible}"  >
+  <p>Приглашение отправлено</p>
+</div>

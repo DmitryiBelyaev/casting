@@ -1,0 +1,35 @@
+ <!--<div *ngIf="subscription?.actuality == false || subscription?.actuality == null" class="sub-wrapper">-->
+ <div class="sub-wrapper">
+    <p class="title">Подписка</p>
+    <p class="text">Подписка позволяет видеть контакты актеров,<br>
+    взаимодействовать с ними, приглашать на<br>кастинги и ставить рейтинг.</p>
+    <div class="sub-var sub-var-first" [ngClass]="{choose:choose[0]}" (click)="change_var(1)" >
+      <div class="circle" [ngClass]="{choose:choose[0]}">
+        <div class="round" [ngClass]="{choose:choose[0]}"></div>
+      </div>
+      <p class="var-text" [ngClass]="{choose:choose[0]}">Один месяц</p>
+      <p class="var-price" [ngClass]="{choose:choose[0]}">1499 Руб</p>
+    </div>
+    <div class="sub-var sub-var-second" [ngClass]="{choose:choose[1]}" (click)="change_var(2)">
+      <div class="circle" [ngClass]="{choose:choose[1]}">
+        <div class="round" [ngClass]="{choose:choose[1]}"></div>
+      </div>
+      <p class="var-text" [ngClass]="{choose:choose[1]}">Три месяца</p>
+      <p class="var-price" [ngClass]="{choose:choose[1]}">4299 Руб</p>
+    </div>
+    <div class="sub-var sub-var-third" [ngClass]="{choose:choose[2]}" (click)="change_var(3)">
+      <div class="circle" [ngClass]="{choose:choose[2]}">
+        <div class="round" [ngClass]="{choose:choose[2]}"></div>
+      </div>
+      <p class="var-text" [ngClass]="{choose:choose[2]}">Шесть месяцев</p>
+      <p class="var-price" [ngClass]="{choose:choose[2]}">8799 Руб</p>
+    </div>
+    <button class="enter" (click)="submit()">Оформить подписку</button>
+  </div>
+  <!--<div *ngIf="subscription?.actuality" class="sub-wrapper-ok">-->
+    <!--<div class="ok-wrapp">-->
+      <!--<img src="{{host}}static/img/ok-white.png">-->
+    <!--</div>-->
+    <!--<p class="sub-actuality">Подписка оформлена</p>-->
+    <!--<p class="count-days">Дней до окончания: <span>{{subscription?.balance}}</span></p>-->
+  <!--</div>-->

@@ -1,0 +1,260 @@
+p, a{
+    color: #333333;
+}
+
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-wrapp-body{
+    position: fixed;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+    height: 100vh;
+    background-color: #fafafa;
+    overflow-y: scroll;
+}
+.main-wrapp-user{
+    width: 1200px;
+    height: auto;
+    margin:auto;
+}
+
+.notification-wrapp{
+  float: left;
+  width: 200px;
+  padding-left: 20px;
+  margin-top: 30px;
+  height: auto;
+}
+
+.main-menu{
+    float: left;
+    width: 200px;
+    margin-top: 30px;
+    height: auto;
+    padding-right: 20px;
+}
+
+.menu-elem{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.menu-elem.active, .menu-elem:active, .menu-elem:focus, .menu-elem:visited{
+  text-decoration: none;
+}
+
+.menu-elem:hover{
+    background-color: #e8e8e8;
+    border-radius: 15px 15px;
+    text-decoration: none;
+}
+
+.menu-elem p{
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.menu-elem-icon{
+    width: 15px;
+    height: 15px;
+    margin-top: 8px;
+    margin-right: 15px;
+    float: left;
+    display: block;
+}
+
+.menu-elem-create-casting{
+    background-color: #d1d1d1;
+    text-align: center;
+    border-radius: 15px 15px;
+    padding-left: 0;
+}
+
+.divide-line{
+    width: 100%;
+    height: 1px;
+    background-color: #d1d1d1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.support{
+    width: 200px;
+    height: auto;
+    float: left;
+}
+
+.main-body{
+    width: 800px;
+    height: auto;
+    float: left;
+}
+
+.main-header{
+    position: absolute;
+    top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+    max-width: 800px;
+    height: 40px;
+    z-index: 9999;
+}
+
+.header-logo{
+    width: 90px;
+    height: 100%;
+    float: left;
+}
+
+.header-user{
+    width: 200px;
+    height: 100%;
+    float: right;
+}
+
+.header-user-elem{
+    display: block;
+    float: right;
+}
+
+.header-user-avatar{
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    border-radius: 20px 20px;
+}
+
+.header-user-avatar img{
+    width: 36px;
+    height: 36px;
+    border-radius: 18px 18px;
+    margin-top: 2px;
+    margin-left: 2px;
+    object-fit: cover;
+}
+
+.header-logo img{
+    height: 100%;
+    width: 100%;
+}
+
+.header-user-name{
+    padding-top: 10px;
+}
+
+.header-user-name-black{
+    color: #333333;
+}
+
+.header-user-name-white{
+    color: white;
+}
+
+.content-wrapp{
+    width: 100%;
+    height: auto;
+}
+
+.log_out-main{
+  height: 250px;
+  width: 370px;
+  padding-right: 55px;
+  padding-left: 55px;
+  padding-top: 60px;
+  padding-bottom: 70px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -185px;
+  background: white;
+  text-align: center;
+  border-radius: 25px;
+  z-index: 99999;
+}
+.out-overlay{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 99998;
+  cursor: pointer;
+}
+
+.main-log{
+  height: 100%;
+  width: 100%;
+}
+
+.Yes_log{
+  display: block;
+  float: left;
+  height: 40px;
+  width: 120px;
+  background: red;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+.NO_log:hover{
+  background: #4bdcff;
+  outline: none;
+}
+
+.Yes_log:hover{
+  background: #ff5253;
+  outline: none;
+}
+
+
+.NO_log{
+  display: block;
+  float: right;
+  height: 40px;
+  width: 120px;
+  background: #0fbeed;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+.log-text{
+  height: 32px;
+  width: 100%;
+  margin-bottom: 0;
+  display: block;
+  font-size: 20pt;
+}
+
+.dark-green{
+  background-color: darkgreen;
+}
+.mid-green{
+  background-color: green;
+}
+.light-green{
+  background-color: forestgreen;
+}

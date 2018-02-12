@@ -1,0 +1,38 @@
+<div class="main-request-detail">
+  <div class="main-content-request-detail">
+  <div class="text-request-detail">
+    <p> Все заявки на роль "{{role_name}}"</p>
+  </div>
+  <div class="content-request-detail">
+    <div *ngFor="let item of Datarequestlist">
+      <div *ngIf="item['status'].status_id !== 11">
+    <div class="elem-content-request-detail" >
+      <div  class="elem-img" >
+        <img [src]="item['employee']?.avatar">
+      </div>
+      <div class="elem-text">
+        <p class="first-text">{{item['employee']?.first_name}}</p>
+        <p class="last-text">{{item['employee']?.last_name}}</p>
+      </div>
+      <div class="invite" (click)="changeStatus(item, 33)" *ngIf="item['status'].status_id == 0">
+        <img src="https://vignette.wikia.nocookie.net/terraria/images/1/1c/%D0%9C%D0%B5%D0%B3%D0%B0_%D0%BF%D0%BB%D1%8E%D1%81.png/revision/latest?cb=20120307153223&path-prefix=ru">
+      </div>
+      <div class="invite" *ngIf="item['status'].status_id == 33">
+        <img src="https://cdn.onlinewebfonts.com/svg/img_411304.png" >
+      </div>
+      <div class="renouncement" (click)="changeStatus(item, 22)">
+        <img src="https://image.flaticon.com/icons/svg/149/149701.svg">
+      </div>
+      <div class="rating">
+        <img *ngIf="employee?.rating >= 7" src="{{host}}static/img/10-7.svg">
+        <img *ngIf="employee?.rating > 4 && employee?.rating < 7" src="{{host}}static/img/7-4.svg">
+        <img *ngIf="employee?.rating <= 4" src="{{host}}static/img/4-0.svg">
+        <p>{{item['employee']?.rating}}</p>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  </div>
+</div>

@@ -1,0 +1,200 @@
+<div style="height: 100px; background: white"></div>
+<div class="content-wrapp" style="width: 100%; height: auto; background: white">
+<div class="header-employee-detail-page">
+    <!--<p>логин{{profile?.username}}</p>-->
+    <div class="avatar">
+        <img *ngIf="profile.avatar" [src]='profile?.avatar'>
+    </div>
+    <div class="main-header-detail">
+        <div class="left-header-detail">
+            <div class="employee-name">
+                <p>{{profile?.first_name}} {{profile?.last_name}}</p>
+            </div>
+            <div class="employee-rating">
+              <img *ngIf="profile?.rating >= 7" src="{{host}}static/img/10-7.svg">
+              <img *ngIf="profile?.rating > 4 && profile?.rating < 7" src="{{host}}static/img/7-4.svg">
+              <img *ngIf="profile?.rating <= 4" src="{{host}}static/img/4-0.svg">
+                <p>{{profile?.rating}}</p>
+            </div>
+          <div class="gender-age-param">
+            <p *ngIf="parameters.gender">{{parameters?.gender?.name}}&nbsp;</p>
+            <p *ngIf="parameters.age">{{parameters?.age}}&nbsp;{{parameters?.age | counter_years}}</p>
+          </div>
+        </div>
+        <div class="right-header-detail">
+            <div class="invite-on-casting" (click)="inviteActive(profile?.id)">
+                <p>Пригласить на съёмку</p>
+            </div>
+        </div>
+        <div class="employee-gender-info">
+            <div class="info-employee">
+                <p class="description-title">Личная информация:</p>
+                <p *ngIf="profile.description != ''" class="description-text">{{profile?.description}}</p>
+                <p *ngIf="profile.description == ''" class="description-text">Информация отсутствует</p>
+            </div>
+            <div class="poll" *ngIf="check_voice==false">
+              <p class="poll-title">Ваша оценка: </p>
+              <img class="oreh oreh1" (click)="go_poll(1)" [src]=oreh[0]>
+              <img class="oreh oreh2" (click)="go_poll(2)" [src]=oreh[1]>
+              <img class="oreh oreh3" (click)="go_poll(3)" [src]=oreh[2]>
+              <img class="oreh oreh4" (click)="go_poll(4)" [src]=oreh[3]>
+              <img class="oreh oreh5" (click)="go_poll(5)" [src]=oreh[4]>
+            </div>
+        </div>
+        <div class="employee-contact-info">
+            <div class="info-employee-contacts">
+                <div class="contact-info-title">
+                    <p>Контакты:</p>
+                </div>
+                <div class="contact-info contact-info-email">
+                    <img src="{{host}}static/img/envelope.svg">
+                    <p *ngIf="contacts.email">{{contacts?.email}}</p>
+                    <p *ngIf="contacts.email == null">email не указан</p>
+                </div>
+                <div class="contact-info contact-info-phone">
+                    <img src="{{host}}static/img/telephone.svg">
+                    <p *ngIf="contacts.phone_number">{{contacts?.phone_number}}</p>
+                    <p *ngIf="contacts.phone_number == null">номер не указан</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-middle">
+    <div class="middle-header">
+        <p>Личные параметры</p>
+    </div>
+    <div class="middle-content">
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.growth">Рост: {{parameters?.growth}}</p>
+            <p *ngIf="parameters.growth == null">Рост: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.clothsize">Размер одежды: {{parameters?.clothsize}}</p>
+            <p *ngIf="parameters.clothsize == null">Размер одежды: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.chestsize">Обхват груди: {{parameters?.chestsize}}</p>
+            <p *ngIf="parameters.chestsize == null">Обхват груди: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.waistsize">Обхват талии: {{parameters?.waistsize}}</p>
+            <p *ngIf="parameters.waistsize == null">Обхват талии: -</p>
+        </div>
+    </div>
+    <div class="middle-content">
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.thighsize" >Обхват бедер: {{parameters?.thighsize}}</p>
+            <p *ngIf="parameters.thighsize == null">Обхват бедер: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.footsize">Размер обуви: {{parameters?.footsize}}</p>
+            <p *ngIf="parameters.footsize == null">Размер обуви: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters?.necksize">Обхват шеи: {{parameters?.necksize}}</p>
+            <p *ngIf="parameters.necksize == null">Обхват шеи: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters?.headsize">Обхват головы: {{parameters?.headsize}}</p>
+            <p *ngIf="parameters.headsize == null">Обхват головы: -</p>
+        </div>
+    </div>
+    <div class="middle-content">
+        <div class="elem-middle-content">
+            <div class="piercing">
+                <p>Пирсинг: </p>
+                <p *ngIf="parameters?.piercing == true">Да</p>
+                <p *ngIf="parameters?.piercing == false">Нет</p>
+                <p *ngIf="parameters.piercing == null">-</p>
+            </div>
+        </div>
+        <div class="elem-middle-content">
+            <div class="tatu">
+                <p>Тату: </p>
+                <p *ngIf="parameters?.tatu == true">Да</p>
+                <p *ngIf="parameters?.tatu == false">Нет</p>
+                <p *ngIf="parameters.tatu == null">-</p>
+            </div>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.appearancetype">Тип внешности: {{parameters?.appearancetype?.name}}</p>
+            <p *ngIf="parameters.appearancetype == null">Тип внешности: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.haircolor">Цвет волос: {{parameters?.haircolor?.name}}</p>
+            <p *ngIf="parameters.haircolor == null">Цвет волос:: -</p>
+        </div>
+    </div>
+    <div class="middle-content">
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.eyecolor">Цвет глаз: {{parameters?.eyecolor?.name}}</p>
+            <p *ngIf="parameters.eyecolor == null">Цвет глаз: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngIf="parameters.city">Город: {{parameters?.city?.name}}</p>
+            <p *ngIf="parameters.city == null">Город: -</p>
+        </div>
+        <div class="elem-middle-content">
+            <p *ngFor="let type of parameters.employmenttype| slice:0:1">Профиль: {{type.name}}</p>
+            <p *ngIf="parameters.employmenttype == null">Профиль: -</p>
+        </div>
+        <div class="elem-middle-content">
+        </div>
+    </div>
+</div>
+  <div class="photo-content">
+    <p class="photo-title">Фотографии</p>
+    <p class="photo-path" (click)="open_Photo()" *ngIf="photos?.length == 0 || photos == null"></p>
+    <p class="photo-path" (click)="open_Photo()" *ngIf="photos?.length <= 4 && photos?.length > 0">Всего ({{photos.length}}) фото</p>
+    <p class="photo-full" (click)="open_Photo()" *ngIf="photos?.length > 4 && path_photo">Показать все фото ({{photos.length}})</p>
+    <p class="photo-full" (click)="open_Photo()" *ngIf="photos?.length > 4 && !path_photo">Скрыть все фото</p>
+  </div>
+  <div class="photos-empty" *ngIf="photos?.length == 0 || photos == null">
+    <p>Нет фотографий</p>
+  </div>
+  <div *ngIf="photos?.length > 0">
+  <div class="photo-content-box-path" *ngIf="path_photo" >
+    <div class="photo-elem-box" *ngFor="let photo of photos | slice:0:4" >
+      <img [src]="photo?.photo" >
+    </div>
+  </div>
+  <div class="photo-content-box" *ngIf="!path_photo">
+    <div class="photo-elem-box" *ngFor="let photo of photos" >
+      <img [src]="photo?.photo" >
+    </div>
+  </div>
+  </div>
+<div class="portfolio-main">
+    <div class="portfolio-text">
+        <p class="portfolio-title">Портфолио</p>
+        <p *ngIf="portfolios.length > 0" class="portfolio-count">Всего ({{portfolios.length}}) сьемки </p>
+    </div>
+    <div class="portfolio-no-empty" *ngIf="portfolios.length > 0">
+    <div class="portfolio-elem" *ngFor="let portfolio of portfolios">
+        <div class="path-portfolio-info portfolio-date">
+            <p>{{portfolio?.finish_date}}</p>
+        </div>
+        <div class="path-portfolio-info portfolio-name">
+            <p>{{portfolio?.name}}</p>
+        </div>
+        <div class="path-portfolio-info portfolio-description">
+            <p>{{portfolio?.description}}</p>
+        </div>
+    </div>
+      </div>
+    <div class="portfolio-empty" *ngIf="portfolios.length == 0">
+      <p>Портфолио отсутствует</p>
+    </div>
+</div>
+</div>
+<div [ngClass]="{visible: invite_active}" (click)="inviteDeactive()" class="overlay-invite"></div>
+<invite-create-detail-app (invisible)="notifi_emit()" [employee_id]="invite_employee_id" (invite_active)="inviteDeactive()" [ngClass]="{visible: invite_active}" class="invite-create-detail-app"></invite-create-detail-app>
+
+<div class="notifi-messages" [ngClass]="{visible: invisible}"  >
+  <p>Приглашение отправлено</p>
+</div>
+
+<div class="voice-messages" [ngClass]="{visible: invis}"  >
+  <p>Спасибо за вашу оценку!</p>
+</div>

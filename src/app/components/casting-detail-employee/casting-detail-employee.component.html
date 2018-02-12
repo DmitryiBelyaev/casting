@@ -1,0 +1,109 @@
+<div style="height: 120px; background: white;"></div>
+<div class="wrap">
+    <div class="casting-image">
+        <img [src]=castDetail?.image>
+    </div>
+  <div class="map">
+    <iframe *ngIf="map_url"
+            width="600"
+            height="450"
+            frameborder="0" style="border:0; width: 100%; height: 100%;"
+            [src]="map_url" allowfullscreen>
+    </iframe>
+    <div class="no-address-map" *ngIf="map_url == null">
+      <p>Адрес не указан</p>
+    </div>
+  </div>
+
+</div>
+<div class="content">
+<div class="casting-name">
+    <p class="cast-name">{{castDetail?.name}}</p>
+    <p class="casting-type">({{castType?.name}})</p>
+</div>
+<div class="middle-casting-content">
+    <div class="left-middle-casting-content">
+        <p>{{castDetail?.description}}</p>
+    </div>
+  <div class="right-middle-casting-content">
+    <div class="middle-event-content">
+      <p class="middle-event-content-title">Адрес:</p>
+      <p *ngIf="castDetail.address" class="middle-event-content-text">{{castDetail?.address}}</p>
+      <p *ngIf="castDetail.address == null" class="middle-event-content-text">Адрес не указан</p>
+    </div>
+    <div class="middle-event-content">
+      <p class="middle-event-content-title">Метро:</p>
+      <p *ngIf="castDetail.metro" class="middle-event-content-text">{{castDetail?.metro}}</p>
+      <p *ngIf="castDetail.metro == null" class="middle-event-content-text">Станция метро не указана</p>
+    </div>
+    <div class="middle-event-content">
+      <p class="middle-event-content-title">Когда:</p>
+      <p *ngIf="castDetail.date" class="middle-event-content-text">{{castDetail?.date}}</p>
+      <p *ngIf="castDetail.date == null" class="middle-event-content-text">Дата не указана</p>
+    </div>
+  </div>
+</div>
+<div class="role-list">
+    <p>Список ролей</p>
+</div>
+<div *ngFor="let role of castingData['role_set']" class="role-list-content">
+  <table class="role-list-content-name">
+    <tr>
+      <td>
+        <p>{{role.name}}</p>
+      </td>
+    </tr>
+  </table>
+  <table class="role-list-description">
+    <tr>
+      <td data-title="{{role.description}}">
+        <p>Параметры роли:</p>
+        <p *ngIf="role.description && role.description.length > 0">{{role.description}}</p>
+        <p *ngIf="role.description == null || role.description.length == 0">Параметры не указаны</p>
+      </td>
+    </tr>
+  </table>
+  <table class="role-list-salary">
+    <tr>
+      <td>
+        <p>{{role.salary}} Руб.</p>
+      </td>
+    </tr>
+  </table>
+  <table class="role-status">
+    <tr>
+      <td>
+        <div class="role-status-text " (click)="CreateRequest(role?.id)" *ngIf="role['requests']['status'] == null && role['invites']['status'] == null">
+          <p>Подать заявку</p>
+        </div>
+        <div class=" role-status-text-request new-request" *ngIf="role['requests']['status'] == null && role['invites']['status']?.status_id == 0 " >
+          <p>{{role['invites']['status']?.name_employer}}</p>
+        </div>
+        <div class=" role-status-text-request new-request" *ngIf="role['requests']['status']?.status_id == 0  && role['invites']['status'] == null" >
+          <p>{{role['requests']['status']?.name_employee}}</p>
+        </div>
+        <div class=" role-status-text-request " *ngIf="role['requests']['status'] == null && role['invites']['status']?.status_id == 11 " >
+          <p>{{role['invites']['status']?.name_employer}}</p>
+        </div>
+        <div class=" role-status-text-request " *ngIf="role['requests']['status']?.status_id == 11  && role['invites']['status'] == null" >
+          <p>{{role['requests']['status']?.name_employee}}</p>
+        </div>
+        <div class=" role-status-text-request cancel-request" *ngIf="role['requests']['status'] == null && role['invites']['status']?.status_id == 22 " >
+          <p>{{role['invites']['status']?.name_employer}}</p>
+        </div>
+        <div class=" role-status-text-request cancel-request" *ngIf="role['requests']['status']?.status_id == 22  && role['invites']['status'] == null" >
+          <p>{{role['requests']['status']?.name_employee}}</p>
+        </div>
+        <div class=" role-status-text-request accept-request" *ngIf="role['requests']['status'] == null && role['invites']['status']?.status_id == 33 " >
+          <p>{{role['invites']['status']?.name_employer}}</p>
+        </div>
+        <div class=" role-status-text-request accept-request" *ngIf="role['requests']['status']?.status_id == 33  && role['invites']['status'] == null" >
+          <p>{{role['requests']['status']?.name_employee}}</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+

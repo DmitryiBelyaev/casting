@@ -1,0 +1,176 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.background-layer{
+  background-color: #f4f4f4;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -99;
+}
+.reg-wrapper{
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  margin-top: -287px;
+  margin-left: -183px;
+  width: 366px;
+  height: 575px;
+  padding: 65px 50px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.title{
+  font-size: 20pt;
+  margin-bottom: 0;
+}
+
+.input-data{
+  width: 100%;
+  height: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 20px;
+  border: 1px solid #a7a7a7;
+  font-size: 10pt;
+}
+
+.input-data:active, .input-data:focus{
+  outline: none;
+}
+
+.input-data::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #a7a7a7;
+  font-size: 10pt;
+}
+.input-data::-moz-placeholder { /* Firefox 19+ */
+  color: #a7a7a7;
+  font-size: 10pt;
+}
+.input-data:-ms-input-placeholder { /* IE 10+ */
+  color: #a7a7a7;
+  font-size: 10pt;
+}
+.input-data:-moz-placeholder { /* Firefox 18- */
+  color: #a7a7a7;
+  font-size: 10pt;
+}
+
+.input-data.ng-touched.ng-invalid{
+  border-color: red;
+}
+
+.email{
+  margin-top: 20px;
+}
+
+.passwd{
+  margin-top: 20px;
+}
+
+.confirm-passwd{
+  margin-top: 20px;
+}
+
+.fullname{
+  margin-top: 20px;
+}
+
+.enter{
+  width: 210px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 11pt;
+  background-color: #fe181a;
+}
+.enter:hover{
+  background: #ff5253;
+}
+
+.enter:focus, .enter:visited, .enter:active {
+  outline: none;
+}
+
+.enter:hover{
+  cursor: pointer;
+}
+.enter:disabled{
+  cursor: auto;
+}
+
+.little-text{
+  font-size: 8pt;
+  color: #a7a7a7;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.little-text-span{
+  font-size: 8pt;
+  color: #0ec5f1;
+}
+
+.radio-wrapp{
+  width: 200px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.radio-button{
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  color: #0ec5f1;
+  border: 1px solid #c6c6c6;
+  cursor: pointer;
+}
+
+.radio-employer{
+  margin-left: 10px;
+}
+
+.radio-label{
+  display: block;
+  float: left;
+  font-size: 10pt;
+  color: #333;
+  margin-left: 5px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.radio-label p{
+  margin-bottom: 0;
+  padding-top: 5px;
+}
+
+.confirm-passwd-wrapp{
+  position: relative;
+}
+
+.confirm-passwd-ok{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 35px;
+  right: 20px;
+}
+
+.error-wrap{
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.error{
+  margin-bottom: 0;
+  color: red;
+  font-size: 8pt;
+}

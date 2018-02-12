@@ -1,0 +1,102 @@
+<div class="wrap">
+<div class="main-top">
+  <div class="top-text">
+    <p>Название и оплата</p>
+  </div>
+  <div class="top-content">
+    <input  type="text" [(ngModel)]="roleUpdate.name" class="top-content-name"  placeholder="Введите название"/>
+    <input type="number" [(ngModel)]="roleUpdate.price" class="top-content-salary" placeholder="0 руб."/>
+  </div>
+</div>
+<div class="main-middle">
+  <div class="middle-header">
+    <p>Личные параметры</p>
+  </div>
+  <div class="middle-content">
+    <div class="elem-middle-content">
+      <p>Рост(см):</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.growth" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Размер одежды:</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.clothsize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Обхват груди(см)</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.chestsize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Обхват талии(см)</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.waistsize" type="number">
+    </div>
+  </div>
+  <div class="middle-content">
+    <div class="elem-middle-content">
+      <p>Обхват бедер(см):</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.thighsize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Размер обуви:</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.footsize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Обхват шеи(см)</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.necksize" type="number">
+    </div>
+    <div class="elem-middle-content">
+      <p>Обхват головы(см)</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.headsize" type="number">
+    </div>
+  </div>
+  <div class="middle-content">
+    <div class="elem-middle-content checkbox-content">
+      <p>Наличие тату:</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.tatu" type="checkbox">
+    </div>
+    <div class="elem-middle-content checkbox-content">
+      <p>Наличие пирсинга:</p>
+      <input class="main-col-content" [(ngModel)]="roleUpdate.piercing" type="checkbox">
+    </div>
+    <div class="elem-middle-content">
+      <p>Тип внешности:</p>
+      <select class="main-col-content" [(ngModel)]="roleUpdate.appearancetype">
+        <option *ngFor="let appearancetype of appearancetypes" value="{{appearancetype.id}}">{{appearancetype.name}}</option>
+      </select>
+    </div>
+    <div class="elem-middle-content">
+      <p>Цвет волос:</p>
+      <select class="main-col-content" [(ngModel)]="roleUpdate.haircolor">
+        <option *ngFor="let haircolor of haircolors" value="{{haircolor.id}}">{{haircolor.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="middle-content">
+    <div class="elem-middle-content">
+      <p>Тип профессии:</p>
+      <select class="last-col-content" [(ngModel)]="roleUpdate.employmenttype">
+        <option *ngFor="let employmenttype of employmenttypes" value="{{employmenttype.id}}">{{employmenttype.name}}</option>
+      </select>
+    </div>
+    <div class="elem-middle-content">
+      <p>Цвет глаз:</p>
+      <select class="last-col-content" [(ngModel)]="roleUpdate.eyecolor">
+        <option *ngFor="let eyecolor of eyecolors" value="{{eyecolor.id}}">{{eyecolor.name}}</option>
+      </select>
+    </div>
+    <div class="elem-middle-content">
+      <p>Город:</p>
+      <select class="last-col-content" [(ngModel)]="roleUpdate.city">
+        <option *ngFor="let city of citys" value="{{city.id}}">{{city.name}}</option>
+      </select>
+    </div>
+    <div class="elem-middle-content">
+      <p>Возраст:</p>
+      <input class="last-col-content" [(ngModel)]="roleUpdate.age" type="number">
+    </div>
+  </div>
+</div>
+<div class="bot-content">
+  <p class="create-role" (click)="submit(roleUpdate)">Сохранить</p>
+</div>
+</div>
+

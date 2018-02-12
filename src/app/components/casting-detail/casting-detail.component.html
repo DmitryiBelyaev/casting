@@ -1,0 +1,155 @@
+<div style="height: 100px; background: white;"></div>
+    <div class="header-casting-detail">
+        <div class="casting-image">
+            <img class="casting-image-img" src="{{castDetail?.image}}">
+            <div class="upload-photo-but">
+              <input class="photo-but" type="file" (change)="FileChangeEvent($event)">
+              <img class="pseudo-photo-but" src="{{host}}static/img/change_photo.png">
+            </div>
+        </div>
+        <div class="map">
+          <iframe *ngIf="map_url"
+            width="600"
+            height="450"
+            frameborder="0" style="border:0; width: 100%; height: 100%;"
+            [src]="map_url" allowfullscreen>
+          </iframe>
+          <div class="no-address-map" *ngIf="map_url == null">
+            <p>Адрес не указан</p>
+          </div>
+        </div>
+    </div>
+    <div class="content">
+    <div class="casting-name" *ngIf="!update">
+        <p class="casting-name-elem">{{castDetail?.name}}</p>
+        <p class="casting-type-elem">({{castType?.name}})</p>
+        <p class="update-casting" (click)="updatecasting()">Редактировать сьемку</p>
+        <p *ngIf="castDetail.status" class="update-casting" (click)="changeStatusCasting(0)">Завершить кастинг</p>
+        <p *ngIf="castDetail.status == false" class="update-casting" (click)="changeStatusCasting(1)">Открыть кастинг</p>
+    </div>
+    <div class="casting-name" *ngIf="update">
+      <p  class="casting-name-elem"><input class="casting-input-name" required pattern="[a-zA-Z0-9]{2,}" [(ngModel)]="castingUpdate.name"></p>
+      <p class="casting-type-elem-update"><select [(ngModel)]="castingUpdate.type">
+        <option *ngFor="let castingType of castingTypes" value="{{castingType.type_id}}">{{castingType?.name}}</option>
+      </select></p>
+      <button class="saveparameters" [disabled]="castingUpdate.name.length < 2" (click)="save_change(castingUpdate)">Сохранить</button>
+      <p class="saveparameters-cancel" (click)="updatecasting()">Отменить</p>
+    </div>
+    <div class="middle-casting-content">
+    <div *ngIf="!update" class="left-middle-casting-content">
+        <p>{{castDetail?.description}}</p>
+    </div>
+    <div *ngIf="update" class="left-middle-casting-content">
+      <textarea placeholder="Описания" maxlength="300" [(ngModel)]="castingUpdate.description">{{castingUpdate.description}}</textarea>
+    </div>
+    <div class="right-middle-casting-content">
+        <div class="middle-event-content">
+            <p class="middle-event-content-title">Адрес:</p>
+            <p *ngIf="!update && castDetail.address" class="middle-event-content-text">{{castDetail?.address}}</p>
+            <p *ngIf="!update && castDetail.address == null" class="middle-event-content-text">Адрес не указан</p>
+            <p *ngIf="update" class="middle-event-content-text address-metro-input address-input"><input placeholder="г. Москва, ул. Академика Королёва, 12Б" [(ngModel)]="castingUpdate.address" type="text"></p>
+        </div>
+        <div class="middle-event-content">
+            <p class="middle-event-content-title">Метро:</p>
+            <p *ngIf="!update && castDetail.metro" class="middle-event-content-text">{{castDetail?.metro}}</p>
+            <p *ngIf="!update && castDetail.metro == null" class="middle-event-content-text">Станция метро не указана</p>
+            <p *ngIf="update" class="middle-event-content-text address-metro-input metro-input"><input placeholder='Станция "ВДНХ"' [(ngModel)]="castingUpdate.metro" type="text"></p>
+        </div>
+        <div class="middle-event-content">
+            <p *ngIf="!update"class="middle-event-content-title">Когда:</p>
+            <p *ngIf="!update && castDetail.date" class="middle-event-content-text">{{castDetail?.date | date_converter}}</p>
+            <p *ngIf="!update && castDetail.date == null" class="middle-event-content-text">Дата не указана</p>
+            <p *ngIf="update" class="middle-event-content-title date-p">Дата проведения:</p>
+            <p *ngIf="update" class="middle-event-content-text"><input type="date" class="date-update" [(ngModel)]="castingUpdate.date"></p>
+        </div>
+        <div class="middle-event-content">
+            <p *ngIf="update" class="middle-event-content-title time-p">Время начала:</p>
+            <p *ngIf="update" class="middle-event-content-text"><input type="time" class="time-update" [(ngModel)]="castingUpdate.time"></p>
+        </div>
+    </div>
+    </div>
+    <div class="role-list">
+        <p>Список ролей</p>
+    </div>
+      <div class="no-roles" *ngIf="check_role == false"><p>Нет ролей</p></div>
+      <div *ngIf="check_role">
+    <div *ngFor="let role of castingData['role_set']" class="role-list-content">
+      <div class="role-desc-main">
+        <table class="role-list-content-name">
+            <tr>
+                <td>
+                    <p>{{role.name}}</p>
+                </td>
+            </tr>
+        </table>
+        <div class="role-list-description-wrap">
+        <table class="role-list-description">
+            <tr>
+                <td data-title="{{role.description}}">
+                    <p *ngIf="role.description && role.description.length > 0">{{role.description}}</p>
+                    <p *ngIf="role.description == null || role.description.length == 0">Параметры не указаны</p>
+                </td>
+            </tr>
+        </table>
+        </div>
+        <table class="role-list-salary">
+            <tr>
+                <td>
+                    <p>{{role.salary}} Руб.</p>
+                </td>
+            </tr>
+        </table>
+        <table class="role-status" *ngIf="!update">
+            <tr>
+                <td>
+                    <div *ngIf = "role.status" class="role-status-text role-status-text-open">
+                        <p>Роль свободна</p>
+                    </div>
+                    <div *ngIf = "role.status == false" class="role-status-text role-status-text-close">
+                      <p>Роль занята</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table class="role-status-change-wrap" *ngIf="!update">
+          <tr>
+            <td>
+              <div *ngIf = "role.status" class="role-status-change-text">
+                <p (click)="changeStatusRole(role.id, 0)">Закрыть роль</p>
+              </div>
+              <div *ngIf = "role.status == false" class="role-status-change-text">
+                <p (click)="changeStatusRole(role.id, 1)">Открыть роль</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <table class="role-status status-place" *ngIf="update">
+          <tr>
+            <td>
+              <div class="role-status-text-update">
+                <p (click)="updaterole(role.id)">Изменить параметры роли</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <!--<div class="role-employee-photo " *ngIf="!update">-->
+            <!--<div *ngFor="let request of role['requests']| slice:0:3" class="role-employee-img">-->
+                <!--<img *ngIf="request['employee_data']?.avatar" [src]="request['employee_data']?.avatar">-->
+            <!--</div>-->
+        <!--</div>-->
+      </div>
+    </div>
+      </div>
+    <div class="role-list-content addrole" *ngIf="update && roleform_check == false">
+      <p (click)="open_close_role_form()">Добавить роль</p>
+    </div>
+    <div class="form-add-role" *ngIf="update && roleform_check">
+      <create-role-app [casting_id]="id" class="create-role-app"></create-role-app>
+      <div class="hide_role_form" (click)="open_close_role_form()"><p>Скрыть</p></div>
+    </div>
+</div>
+<div class="overlay-role-update" (click)="hideupdaterole()" *ngIf="update && update_role"></div>
+<div class="update-role-wrapp" *ngIf="update && update_role">
+  <edit-role-app [role_id]="update_role_id"></edit-role-app>
+</div>
+

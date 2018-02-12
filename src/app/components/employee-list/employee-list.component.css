@@ -1,0 +1,488 @@
+.wrapp{
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.header{
+    width: 100%;
+    height: 280px;
+    position: relative;
+}
+
+.background-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+
+.search-title{
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    text-align: center;
+}
+
+.search-title p{
+    color: white;
+    font-size: 11pt;
+}
+
+.search{
+    position: absolute;
+    top:120px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.search-wrapp{
+    width: 400px;
+    margin:auto;
+}
+
+.search-input{
+    width: 370px;
+    height: 30px;
+    float: left;
+    border-radius: 15px 0 0 15px;
+}
+.search-input input{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    padding-left: 15px;
+    font-size: 10pt;
+    outline: none;
+    border: 1px solid #e8e8e8;
+}
+.search-input input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px #fff !important; /* Цвет фона */
+    -webkit-text-fill-color: #333 !important; /* цвет текста */
+    color: #333 !important; /* цвет текста */
+}
+
+.search-input input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #d3d3d3;
+    font-size: 10pt;
+}
+.search-input input::-moz-placeholder { /* Firefox 19+ */
+    color: #d3d3d3;
+    font-size: 10pt;
+}
+.search-input input:-ms-input-placeholder { /* IE 10+ */
+    color: #d3d3d3;
+    font-size: 10pt;
+}
+.search-input input:-moz-placeholder { /* Firefox 18- */
+    color: #d3d3d3;
+    font-size: 10pt;
+}
+
+.search-button{
+    width: 30px;
+    height: 30px;
+    float: right;
+    background-color: white;
+    border-radius: 0 15px 15px 0;
+    border: 1px solid #e8e8e8;
+    border-left: none;
+    cursor: pointer;
+}
+.search-button img{
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+    margin-left: -2px;
+}
+
+.filters{
+    width: 100%;
+    height: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.filter-select{
+    width: 130px;
+    height: 40px;
+    float: left;
+}
+
+.filter-select select{
+    border: none;
+    margin-top: 7px;
+    height: 26px;
+    width: 100%;
+    border-radius: 13px;
+    background-color: #e9e9e9;
+    font-size: 10pt;
+    padding-left: 13px;
+    padding-right: 13px;
+    color: #666666;
+    outline: none;
+  cursor: pointer;
+}
+
+.filter-order-wrap{
+    width: 480px;
+    height: 100%;
+    float: left;
+}
+
+.filter-order{
+    width: 200px;
+    height: 100%;
+    margin: auto;
+}
+
+.order-date{
+    display: block;
+    padding-top: 10px;
+    height: 100%;
+    float: left;
+}
+
+.order-rating{
+    display: block;
+    padding-top: 10px;
+    height: 100%;
+    float: right;
+}
+
+.order-elem:hover{
+    cursor: pointer;
+}
+
+.order-elem.active{
+    border-bottom: 1px solid red;
+    font-weight: 700;
+}
+
+.filter-param{
+    width: 130px;
+    float: left;
+    text-align: right;
+}
+.filter-param p{
+    padding-top: 10px;
+    font-size: 10pt;
+    text-decoration: underline;
+  color: #333333;
+  cursor: pointer;
+}
+.filter-param:hover p{
+  color: #666666;
+  text-decoration: underline;
+}
+
+.content{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    padding: 25px 30px;
+}
+
+.elem-content{
+    position: relative;
+    margin-right: 15px;
+    width: 136px;
+    height: 156px;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.elem-content:nth-child(5n+5){
+    margin-right: 0;
+}
+
+.elem-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    overflow: hidden;
+    margin: auto;
+    cursor: pointer;
+}
+.elem-img:focus, .elem-img:active, .elem-img:visited{
+    outline: none;
+}
+.elem-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 60px;
+    display: block;
+}
+
+.elem-text{
+    height: 36px;
+    width: 100%;
+    text-align: center;
+    padding-top: 7px;
+}
+.elem-text p{
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+.first-text{
+    font-size: 9pt;
+}
+.last-text{
+    font-size: 10pt;
+}
+
+.invite{
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #0ec5f1;
+    position: absolute;
+    top: 0px;
+    left: 8px;
+}
+
+.invite img{
+    width: 10px;
+    height: 10px;
+    display: block;
+    margin: auto;
+    margin-top: 8px;
+    filter: invert(100%);
+}
+
+.invite:hover{
+    cursor: pointer;
+}
+
+.rating{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 85px;
+    left: 93px;
+    text-align: center;
+}
+
+.rating img{
+    height: 35px;
+    width: 35px;
+}
+
+.rating p{
+    color: white;
+    font-size: 8pt;
+    margin-bottom: 0;
+    margin-top: -23px;
+    margin-left: 4px;
+}
+
+.overlay-invite{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
+  cursor: pointer;
+}
+
+.overlay-invite.visible{
+  display: block;
+}
+
+.invite-create-detail-app{
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -205px;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+}
+
+.invite-create-detail-app.visible{
+  display: block;
+}
+
+.main-search-filter{
+  padding: 25px 30px;
+  padding-bottom: 0;
+  height: 250px;
+  background: white;
+}
+
+.top-main-search-filter{
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;;
+}
+
+.filter-main-text{
+  display: block;
+  float: left;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.button-cancel{
+  width: 70px;
+  cursor: pointer;
+  text-align: center;
+  height: 30px;
+  display: block;
+  float: left;
+  padding-top: 7px;
+}
+.button-cancel p{
+  color: #333333;
+  margin-bottom: 0;
+  text-decoration: underline;
+  font-size: 10pt;
+}
+.button-cancel:hover p{
+  color: #666666;
+  text-decoration: underline;
+}
+.button-search{
+  width: 120px;
+  font-size: 10pt;
+  text-align: center;
+  background: #0fbeed;
+  border-radius: 15px;
+  height: 30px;
+  display: block;
+  float: right;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-left: 30px;
+}
+.button-search:hover{
+  background: #4bdcff;
+}
+.button-search p{
+  margin-bottom: 0;
+  color: white;
+  font-size: 10pt;
+  margin-top: -4px;
+  float: left;
+}
+.button-search img{
+  height: 10px;
+  width: 10px;
+  margin-right: 5px;
+  float: left;
+}
+.middle-content{
+  width: 185px;
+  height: 160px;
+  float: left;
+  padding-right: 10px;
+}
+
+.elem-middle-content{
+  height: 40px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.middle-content.last-col-content{
+  padding-right: 0;
+}
+
+.elem-middle-content input {
+  display: block;
+  height: 20px;
+  float: right;
+  margin-top: 9px;
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+}
+
+.elem-middle-content.checkbox-content input{
+  width: 20px;
+}
+
+.elem-middle-content input:focus{
+  outline: none;
+  text-decoration: none;
+  border: 1px solid black;
+}
+
+.elem-middle-content select{
+  display: block;
+  height: 20px;
+  float: right;
+  margin-top: 9px;
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  box-shadow: none;
+  outline: none;
+}
+.middle-content p {
+  padding-top: 10px;
+  margin-bottom: 0;
+  display: block;
+  font-size: 10pt;
+  width: 120px;
+  float: left;
+}
+
+.footer-text{
+  margin-top: 10px;
+  height: 30px;
+  width: 120px;
+  border-radius: 15px;
+  background: #0fbeed;
+  padding-top: 4px;
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+}
+.footer-text:hover p{
+  background: #4bdcff;
+}
+
+.footer{
+  display: inline-block;
+  height: 40px;
+  background: white;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.notifi-messages{
+  height: 35px;
+  width: 400px;
+  background: rgba(51, 51, 51 , 0.7);
+  border-radius: 5px;
+  position: absolute;
+  top: 30px;
+  z-index: 999999999;
+  margin-left: 200px;
+  display: none;
+  text-align: center;
+}
+
+.notifi-messages p{
+  font-size: 9pt;
+  padding: 5px 10px;
+  color: rgba(255, 255, 255 ,0.6);
+}
+
+
+.notifi-messages.visible{
+  display: block;
+}

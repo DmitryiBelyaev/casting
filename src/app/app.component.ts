@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { HttpService} from './http.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'my-app',
+    template: `
+                <router-outlet></router-outlet>
+                `,
+    styleUrls: ['./app.component.css'],
+    providers: [HttpService],
 })
 export class AppComponent {
-  title = 'app';
+
 }

@@ -1,0 +1,88 @@
+<div class="notification-wrapp">
+<div class="notifications-title">
+  <p *ngIf="notifications">Новые уведомления ({{notifications?.length}})</p>
+  <p *ngIf="notifications == null">Новые уведомления (0)</p>
+</div>
+<div *ngIf="target">
+<div class="notifications-content" *ngIf="notificationSlice">
+<div class="notifications-elem" *ngFor="let notifi of notificationSlice">
+  <div class="datetime-row elem-row">
+    <p class="notifi-date">{{notifi?.date}},&nbsp;</p>
+    <p class="notifi-time">{{notifi?.time | slice:0:5}}</p>
+    <img class="close_notifi" (click)="delete_notifi(notifi.id)" src="https://image.flaticon.com/icons/svg/149/149701.svg">
+  </div>
+  <div class="notifi-request" *ngIf="notifi.request">
+    <div class="name-row elem-row">
+      <p class="notifi-casting-title">кастинг:&nbsp;</p>
+      <p class="notifi-casting-name" [routerLink]="['/employee/castingDetail', notifi?.request?.role?.casting?.id ]">"{{notifi?.request?.role?.casting?.name}}"</p>
+    </div>
+    <div class="status-row elem-row">
+      <p class="notifi-request-titile notifi-title">заявка &nbsp;</p>
+      <p *ngIf="notifi?.request?.status?.status_id == 22" class="notifi-status-name status-color-no notifi-request-status-name">{{notifi?.request?.status?.name}}</p>
+      <p *ngIf="notifi?.request?.status?.status_id == 33" class="notifi-status-name status-color-ok notifi-request-status-name">{{notifi?.request?.status?.name}}</p>
+    </div>
+    <div class="role-row elem-row">
+      <p class="notifi-role-title notifi-request-role-title">роль:&nbsp;</p>
+      <p class="notifi-role-name notifi-request-role-name" (click)="go_casting(notifi?.request?.role?.casting?.id )">"{{notifi?.request?.role?.name}}"</p>
+    </div>
+  </div>
+  <div class="notifi-invite" *ngIf="notifi.invite">
+    <div class="name-row elem-row">
+      <p class="notifi-casting-title">кастинг:&nbsp;</p>
+      <p class="notifi-casting-name" [routerLink]="['/employee/castingDetail', notifi?.request?.role?.casting?.id ]">"{{notifi?.invite?.role?.casting?.name}}"</p>
+    </div>
+    <div class="status-row elem-row">
+      <p class="notifi-invite-titile notifi-title">приглашение&nbsp;</p>
+      <p *ngIf="notifi?.invite?.status?.status_id == 0" class="notifi-status-name status-color-new notifi-invite-status-name">{{notifi?.invite?.status?.name}}</p>
+      <p *ngIf="notifi?.invite?.status?.status_id == 11" class="notifi-status-name status-color-cancel notifi-invite-status-name">{{notifi?.invite?.status?.name}}</p>
+    </div>
+    <div class="role-row elem-row">
+      <p class="notifi-role-title notifi-invite-role-title">роль:&nbsp;</p>
+      <p class="notifi-role-name notifi-invite-role-name" [routerLink]="['/employee/castingDetail', notifi?.invite?.role?.casting?.id ]">"{{notifi?.invite?.role?.name}}"</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div *ngIf="target==false">
+  <div class="notifications-content" *ngIf="notificationSlice">
+    <div class="notifications-elem" *ngFor="let notifi of notificationSlice">
+      <div class="datetime-row elem-row">
+        <p class="notifi-date">{{notifi?.date}},&nbsp;</p>
+        <p class="notifi-time">{{notifi?.time | slice:0:5}}</p>
+        <img class="close_notifi" (click)="delete_notifi(notifi.id)" src="https://image.flaticon.com/icons/svg/149/149701.svg">
+      </div>
+      <div class="notifi-request" *ngIf="notifi.request">
+        <div class="name-row elem-row">
+          <p class="notifi-firstname" [routerLink]="['/employer/employeeDetail', notitf?.employee?.id ]" >{{notifi?.employee?.first_name}}&nbsp;</p>
+          <p class="notifi-lastname" [routerLink]="['/employer/employeeDetail', notifi?.employee?.id ]">{{notifi?.employee?.last_name}}</p>
+        </div>
+        <div class="status-row elem-row">
+          <p class="notifi-request-titile notifi-title">заявка &nbsp;</p>
+          <p *ngIf="notifi?.request?.status?.status_id == 0" class="notifi-status-name status-color-new notifi-request-status-name">{{notifi?.request?.status?.name}}</p>
+          <p *ngIf="notifi?.request?.status?.status_id == 11" class="notifi-status-name status-color-cancel notifi-request-status-name">{{notifi?.request?.status?.name}}</p>
+        </div>
+        <div class="role-row elem-row">
+          <p class="notifi-role-title notifi-request-role-title">роль:&nbsp;</p>
+          <p class="notifi-role-name notifi-request-role-name" [routerLink]="['/employer/castingDetail', notifi?.request?.role?.casting?.id ]">"{{notifi?.request?.role?.name}}"</p>
+        </div>
+      </div>
+      <div class="notifi-invite" *ngIf="notifi.invite">
+        <div class="name-row elem-row">
+          <p class="notifi-firstname" [routerLink]="['/employer/employeeDetail', notifi?.employee?.id ]">{{notifi?.employee?.first_name}}&nbsp;</p>
+          <p class="notifi-lastname" [routerLink]="['/employer/employeeDetail', notifi?.employee?.id ]">{{notifi?.employee?.last_name}}</p>
+        </div>
+        <div class="status-row elem-row">
+          <p class="notifi-invite-titile notifi-title">приглашение&nbsp;</p>
+          <p *ngIf="notifi?.invite?.status?.status_id == 22" class="notifi-status-name status-color-no notifi-invite-status-name">{{notifi?.invite?.status?.name}}</p>
+          <p *ngIf="notifi?.invite?.status?.status_id == 33" class="notifi-status-name status-color-ok notifi-invite-status-name">{{notifi?.invite?.status?.name}}</p>
+        </div>
+        <div class="role-row elem-row">
+          <p class="notifi-role-title notifi-invite-role-title">роль:&nbsp;</p>
+          <p class="notifi-role-name notifi-invite-role-name" [routerLink]="['/employer/castingDetail', notifi?.invite?.role?.casting?.id ]">"{{notifi?.invite?.role?.name}}"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

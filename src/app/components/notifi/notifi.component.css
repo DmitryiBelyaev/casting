@@ -1,0 +1,146 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.notification-wrapp{
+  width: 180px;
+  height: auto;
+}
+
+.notifications-title{
+  width: 100%;
+  height: 30px;
+  text-align: left;
+  background-color: white;
+  padding: 7px 8px;
+  border-radius: 4px;
+}
+
+.notifications-title p{
+  font-size: 9pt;
+  color: #c2c2c2;
+  margin-bottom: 0;
+}
+
+.notifications-content{
+  width: 100%;
+  height: auto;
+}
+
+.notifications-elem{
+  width: 100%;
+  height: 85px;
+  padding: 8px 8px;
+  background-color: white;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.elem-row{
+  width: 100%;
+  float: left;
+  height: 15px;
+}
+
+.datetime-row{
+  height: 18px;
+}
+
+.notifi-date{
+  font-size: 9pt;
+  color: #c2c2c2;
+  float: left;
+  margin-bottom: 0;
+}
+
+.notifi-time{
+  font-size: 9pt;
+  color: #c2c2c2;
+  float: left;
+  margin-bottom: 0;
+}
+
+.notifi-request{
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.notifi-invite{
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.notifi-firstname, .notifi-lastname{
+  font-size: 9pt;
+  font-weight: bold;
+  float: left;
+  margin-bottom:0;
+  cursor: pointer;
+  outline: none;
+}
+
+.notifi-casting-title{
+  font-size: 9pt;
+  float: left;
+  color: #c2c2c2;
+  margin-bottom: 0;
+}
+
+.notifi-casting-name{
+  font-size: 9pt;
+  float: left;
+  margin-bottom: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.notifi-title{
+  font-size: 9pt;
+  color: #c2c2c2;
+  float: left;
+  margin-bottom: 0;
+}
+
+.notifi-status-name{
+  font-size: 9pt;
+  float: left;
+  margin-bottom: 0;
+}
+
+.notifi-role-title{
+  font-size: 9pt;
+  float: left;
+  color: #c2c2c2;
+  margin-bottom: 0;
+}
+
+.notifi-role-name{
+  font-size: 9pt;
+  float: left;
+  margin-bottom: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.close_notifi{
+  float: right;
+  height: 8px;
+  width: 8px;
+  opacity: 1;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.status-color-no{
+  color: #6e9366;
+}
+.status-color-cancel{
+  color: #6e9366;
+}
+.status-color-ok{
+  color: #35d313;
+}
+.status-color-new{
+  color: #35d313;
+}

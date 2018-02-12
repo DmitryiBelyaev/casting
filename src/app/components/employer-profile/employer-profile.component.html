@@ -1,0 +1,100 @@
+<div class="header-employer"></div>
+<div class="main-employer">
+    <div class="avatar-employer">
+        <img [src]="employer?.avatar">
+        <div class="upload-photo-but">
+          <input class="photo-but" type="file" (change)="FileChangeEvent($event)">
+          <img class="pseudo-photo-but" src="{{host}}static/img/change_photo.png">
+        </div>
+    </div>
+    <div class="content-employer">
+            <div class="top-content-employer">
+              <p *ngIf="!update" class="name-employer">{{employer?.first_name}} {{employer?.last_name}}</p>
+              <div *ngIf="update" class="name-employer">
+                <input type="text" required class="employer-name-first employer-name-input" [(ngModel)]="updateEmployer.first_name" />
+                <input type="text" required class="employer-name-last employer-name-input" [(ngModel)]="updateEmployer.last_name" />
+              </div>
+                <div class="counter">
+                  <p class="counter-text">{{subscription?.balance | subscribe_counter}} подписки</p>
+                  <p class="counter-span light-green" *ngIf="subscription && subscription.balance > 20">{{subscription?.balance}}</p>
+                  <p class="counter-span mid-green" *ngIf="subscription && subscription.balance > 10 && subscription.balance < 21">{{subscription?.balance}}</p>
+                  <p class="counter-span dark-green" *ngIf="subscription && subscription.balance < 11">{{subscription?.balance}}</p>
+                  <p class="counter-span dark-green" *ngIf="subscription == undefined">0</p>
+                  <p class="counter-text">Осталость </p>
+                </div>
+            </div>
+            <p class="change_name_but" *ngIf="!update" (click)="change_name()">изменить</p>
+            <div class="change_name_but_change" *ngIf="update">
+              <p type="submit" (click)="change_name_submit(updateEmployer)">сохранить</p>
+            </div>
+            <p class="change_name_but change_name_but_cancel" *ngIf="update" (click)="change_name()">отменить</p>
+        <div *ngIf="subscription?.actuality == null && check_confirm_email == true" class="middle-employer">
+            <p>Подписка не оформлена</p>
+        </div>
+        <div *ngIf="subscription?.actuality == false && check_confirm_email == true" class="middle-employer">
+          <p>Срок подписки истек</p>
+        </div>
+        <div *ngIf="check_confirm_email == false" class="middle-employer">
+          <p>Аккаунт не подтвержден</p>
+        </div>
+        <div *ngIf="subscription?.actuality == false || subscription?.actuality == null && check_confirm_email == true" class="description-employer">
+                <p class="title-description">
+                    Оформите подписку, чтобы использовать все возможности сервиса, например, создавать
+                  съемки, которые будут отображаться в поисковой выдаче, а также просматривать
+                  контакты актеров из каталога.
+                </p>
+        </div>
+        <div *ngIf="check_confirm_email == false" class="description-employer">
+          <p class="title-description">
+            Мы отправили вам на почту письмо с кодом подтверждения аккаунта. Подтверждение аккаунта
+            позволит вам оформлять подписку, чтобы использовать все возможности сервиса.
+            Для подверждения аккаунта введите в следующее поле код из письма и нажмите кнопку "Подтвердить аккаунт"
+          </p>
+        </div>
+        <div class="ok-sub-wrap" *ngIf="subscription?.actuality == true && check_confirm_email == true">
+        <div class="ok-sub">
+          <div class="ok-sub-img">
+          <img src="{{host}}static/img/ok-white.png">
+          </div>
+          <p class="ok-sub-text">Подписка оформлена</p>
+        </div>
+        </div>
+        <div *ngIf="subscription?.actuality == false || subscription?.actuality == null && check_confirm_email == true" class="make_order" (click)="open_pay()">
+          <p>Оформить подписку</p>
+        </div>
+      <div *ngIf="check_confirm_email == false">
+        <input  type="text" name="code_confirm" required pattern="[A-Za-z0-9\-]{36}" placeholder="Код подтверждения" [(ngModel)]="code_confirm_email" class="confirm_account_input" #code_confirm="ngModel">
+        <button  class="confirm_account_but" type="submit" [disabled]="code_confirm.invalid" (click)="send_confirm_code(code_confirm_email)">
+          Подтвердить аккаунт
+        </button>
+      </div>
+</div>
+<div class="overlay" *ngIf="pay_open" (click)="close_pay()"></div>
+<div class="sub-wrapper sub-form" *ngIf="pay_open">
+  <p class="title">Подписка</p>
+  <p class="text">Подписка позволяет видеть контакты актеров,<br>
+    взаимодействовать с ними, приглашать на<br>кастинги и ставить рейтинг.</p>
+  <div class="sub-var sub-var-first" [ngClass]="{choose:choose[0]}" (click)="change_var(1)" >
+    <div class="circle" [ngClass]="{choose:choose[0]}">
+      <div class="round" [ngClass]="{choose:choose[0]}"></div>
+    </div>
+    <p class="var-text" [ngClass]="{choose:choose[0]}">Один месяц</p>
+    <p class="var-price" [ngClass]="{choose:choose[0]}">1499 Руб</p>
+  </div>
+  <div class="sub-var sub-var-second" [ngClass]="{choose:choose[1]}" (click)="change_var(2)">
+    <div class="circle" [ngClass]="{choose:choose[1]}">
+      <div class="round" [ngClass]="{choose:choose[1]}"></div>
+    </div>
+    <p class="var-text" [ngClass]="{choose:choose[1]}">Три месяца</p>
+    <p class="var-price" [ngClass]="{choose:choose[1]}">4299 Руб</p>
+  </div>
+  <div class="sub-var sub-var-third" [ngClass]="{choose:choose[2]}" (click)="change_var(3)">
+    <div class="circle" [ngClass]="{choose:choose[2]}">
+      <div class="round" [ngClass]="{choose:choose[2]}"></div>
+    </div>
+    <p class="var-text" [ngClass]="{choose:choose[2]}">Шесть месяцев</p>
+    <p class="var-price" [ngClass]="{choose:choose[2]}">8799 Руб</p>
+  </div>
+  <button class="enter" (click)="submit()">Оформить подписку</button>
+</div>
+</div>

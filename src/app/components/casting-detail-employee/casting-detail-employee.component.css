@@ -1,0 +1,250 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.wrap{
+  margin-top: 10px;
+  width: 100%;
+  height: 280px;
+}
+.content{
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 25px 30px 30px 30px;
+}
+.casting-image{
+    width: 50%;
+    height: 280px;
+    float: left;
+}
+
+.casting-image img{
+    height: 280px;
+    width: 400px;
+  object-fit: cover;
+}
+
+.map{
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: #dddddd;
+}
+
+.map iframe{
+}
+
+.map img{
+  width: 100%;
+  height: 100%;
+}
+
+.casting-name{
+    height: 50px;
+
+    background: white;
+}
+
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.cast-name{
+  font-weight: bold;
+  font-size: 14pt;
+  display: block;
+  float: left;
+}
+.casting-type{
+  font-weight: normal;
+  display: block;
+  float: left;
+  padding-top: 4px;
+  margin-left: 20px;
+}
+
+.middle-casting-content{
+    height: 120px;
+    width: 100%;
+    background: white;
+}
+
+.left-middle-casting-content{
+    height: 120px;
+    width: 50%;
+    float: left;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.left-middle-casting-content p{
+    margin: 0;
+    font-size: 8pt;
+}
+
+.right-middle-casting-content{
+  height: auto;
+  width: 50%;
+  float: left;
+}
+
+.middle-event-content{
+  height: 30px;
+  width: 100%;
+  padding-left: 60px;
+}
+
+.middle-event-content-title{
+  width: 90px;
+  float: left;
+  margin-bottom: 0;
+}
+
+.middle-event-content-text{
+  float: right;
+  margin-bottom: 0;
+}
+
+.middle-event-content p{
+  display: block;
+  font-size: 8pt;
+  color: #999999;
+}
+
+.role-list{
+    height: 50px;
+    background: white;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.role-list-content{
+    height: 70px;
+    background: white;
+    border-top: 1px solid #f1f1f1;
+}
+
+.role-list-content-name{
+  width: 105px;
+  height: 100%;
+  float: left;
+}
+.role-list-content-name td{
+  vertical-align: middle;
+}
+.role-list-content-name p{
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 0;
+}
+
+.role-list-description{
+  height: 100%;
+  width: 230px;
+  float: left;
+  margin: 0;
+  overflow: hidden;
+  margin-left: 30px;
+}
+
+.role-list-description tr{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.role-list-description td{
+  vertical-align: middle;
+  height: 100%;
+  overflow: hidden;
+  padding-right: 10px;
+}
+
+.role-list-description p{
+  white-space: nowrap;
+  width: 230px;
+  font-size: 8pt;
+  padding-top: 1px;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.role-list-salary{
+  height: 70px;
+  width: 120px;
+  float: left;
+  margin-left: 50px;
+}
+
+.role-list-salary td{
+  vertical-align: middle;
+}
+
+.role-list-salary p{
+  font-weight: 700;
+  font-size: 10pt;
+  padding-top: 1px;
+  margin: 0;
+}
+
+.role-status{
+  float: left;
+  height: 70px;
+  width: 105px;
+}
+
+.role-status td{
+  vertical-align: middle;
+}
+
+.role-status-text{
+  width: 105px;
+  height: 20px;
+  margin-left: 90px;
+  background-color: #0fbeed;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.role-status-text:hover{
+  background: #4bdcff;
+}
+
+.role-status-text-request{
+  background-color: #cccccc;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 45px;
+  width: 150px;
+  height: 20px;
+}
+
+.role-status-text, .role-status-text-request p{
+  font-size: 8pt;
+  padding-top: 3px;
+  color: white;
+}
+
+.accept-request{
+  background: #27d002;
+}
+
+.cancel-request{
+  background: #fe181a;
+}
+
+.new-request{
+  background: #0fbeed;
+}
+
+.no-address-map{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.no-address-map p{
+  font-size: 16pt;
+  color: #999999;
+  margin-top: 100px;
+}

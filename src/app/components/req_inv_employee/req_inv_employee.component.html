@@ -1,0 +1,11 @@
+<div class="main-req-inv-menu">
+    <div class="header">
+        <div class="req-inv-menu">
+            <a class="req-inv-menu-elem req-inv-menu-elem-request" routerLink="requests" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><p>Входящие</p></a>
+            <a class="req-inv-menu-elem req-inv-menu-elem-invite" routerLink="invites" routerLinkActive="active"><p>Исходящие</p></a>
+        </div>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

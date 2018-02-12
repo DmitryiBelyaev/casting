@@ -1,0 +1,56 @@
+<div class="main-wrapp-body">
+    <div class="main-wrapp-user">
+        <div class="main-menu">
+            <a class="menu-elem" routerLink="profile" routerLinkActive="active">
+                <img class="menu-elem-icon" src="{{host}}static/img/man-user.svg">
+                <p>Моя страница</p>
+            </a>
+            <a class="menu-elem" routerLink="req_inv" routerLinkActive="active">
+                <img class="menu-elem-icon" src="{{host}}static/img/mail.svg">
+                <p>Мои заявки</p>
+            </a>
+            <a class="menu-elem" routerLink="role_list" routerLinkActive="active">
+                <img class="menu-elem-icon" src="{{host}}static/img/menu.svg">
+                <p>Каталог Ролей</p>
+            </a>
+            <a class="menu-elem"  (click)="Guard_log_out()">
+                <img class="menu-elem-icon" src="{{host}}static/img/exit.svg">
+                <p>Выйти</p>
+            </a>
+        </div>
+        <div class="main-body">
+            <div class="content-wrapp">
+                <router-outlet (activate)="switchfunc($event)"></router-outlet>
+            </div>
+            <div class="main-header">
+                <div class="header-logo">
+                    <img *ngIf="check == true" src="{{host}}static/img/logo_red.svg">
+                    <img *ngIf="check == false" src="{{host}}static/img/logo.svg">
+                </div>
+                <div class="header-user">
+                    <div class="header-user-elem header-user-avatar">
+                        <img [src]=employee?.avatar>
+                    </div>
+                    <p *ngIf="check == true" class="header-user-elem header-user-name header-user-name-black">{{employee?.first_name}} {{employee?.last_name}}</p>
+                    <p *ngIf="check == false" class="header-user-elem header-user-name header-user-name-white">{{employee?.first_name}} {{employee?.last_name}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="support">
+        </div>
+      <div class="notification-wrapp">
+        <notifi-app [target]="true"></notifi-app>
+      </div>
+    </div>
+</div>
+<div class="out-overlay"  (click)="Guard_log_out()" *ngIf="visibility"></div>
+<div *ngIf="visibility" class="log_out-main">
+  <div class="main-log">
+    <p class="log-text">Вы уверены, </p>
+    <p class="log-text"> что хотите выйти?</p>
+    <div>
+      <p routerLink="/logout" class="Yes_log">Да</p>
+      <p (click)="Guard_log_out()" class="NO_log">Отмена</p>
+    </div>
+  </div>
+</div>

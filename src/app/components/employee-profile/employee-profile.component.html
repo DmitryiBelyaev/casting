@@ -1,0 +1,325 @@
+<div style="height: 100px; background: white"></div>
+<div class="main-employee-profile">
+    <div class="content-wrapp" style="width: 100%; height: auto; background: white">
+        <div class="header-employee-detail-page">
+            <!--<p>логин{{profile?.username}}</p>-->
+            <div class="avatar">
+                <img  [src]='profile?.avatar'>
+                <div class="upload-photo-but">
+                  <input class="photo-but" type="file" (change)="FileChangeEvent($event)">
+                  <img class="pseudo-photo-but" src="{{host}}static/img/change_photo.png">
+                </div>
+            </div>
+            <div class="main-header-detail">
+                <div class="left-header-detail">
+                    <div class="employee-name" *ngIf="!update">
+                        <p>{{profile?.first_name}} {{profile?.last_name}}</p>
+                    </div>
+                  <div class="employee-name-update" *ngIf="update">
+                    <form id="validation_custom">
+                    <input type="text" required pattern="[a-zA-Z0-9]{1,}" class="employee-name-first" name="first_name" [(ngModel)]="parametersUpdate.first_name" #first_name="ngModel" />
+                    <input type="text" required pattern="[a-zA-Z0-9]{1,}" class="employee-name-last" name="last_name" [(ngModel)]="parametersUpdate.last_name" #last_name="ngModel" />
+                    </form>
+                  </div>
+                    <div class="employee-rating" *ngIf="!update">
+                        <img *ngIf="profile?.rating >= 7" src="{{host}}static/img/10-7.svg">
+                        <img *ngIf="profile?.rating > 4 && profile?.rating < 7" src="{{host}}static/img/7-4.svg">
+                        <img *ngIf="profile?.rating <= 4" src="{{host}}static/img/4-0.svg">
+                        <p>{{profile?.rating}}</p>
+                    </div>
+                    <div class="gender-age-param" *ngIf="!update">
+                        <p>{{parameters?.gender?.name}},&nbsp;{{parameters?.age}}&nbsp;{{parameters?.age | counter_years}}</p>
+                    </div>
+                  <div class="gender-age-param-update" *ngIf="update">
+                    <p>Пол:</p>
+                    <input class="gender-input" type="radio" id="male" [value]="true" [(ngModel)]="type_gender">
+                    <label for="male">Мужской</label>
+                    <input class="gender-input" type="radio" id="female" [value]="false" [(ngModel)]="type_gender">
+                    <label for="female">Женский</label>
+                  </div>
+                  <div class="birthday-wrapp" *ngIf="update">
+                    <p>Дата рождения:</p>
+                    <input class="birthday" type="date" min='1900-01-01' max='2017-12-12' [(ngModel)]="parametersUpdate.birthday"  />
+                  </div>
+                </div>
+                <div class="right-header-detail">
+                    <div class="edit-profile" *ngIf="!update">
+                        <p (click)="updateprofile()" class="profile-update">редактировать профиль</p>
+                    </div>
+                  <div class="edit-profile-button" *ngIf="update">
+                    <button form="validation_custom" class="profile-update-button" type="submit" [disabled]="first_name?.invalid || last_name?.invalid " (click)="submit(parametersUpdate, type_gender)">Сохранить изменения</button>
+                    <p class="profile-update-cancel" (click)="updateprofile()">отменить</p>
+                  </div>
+
+                </div>
+                <div class="employee-gender-info" *ngIf="!update">
+                    <div class="info-employee">
+                        <p class="description-title">Личная информация:</p>
+                        <p *ngIf="profile.description != ''" class="description-text">{{profile?.description}}</p>
+                        <p *ngIf="profile.description == ''" class="description-text">Информация отсутствует</p>
+                    </div>
+                </div>
+              <div class="employee-gender-info" *ngIf="update">
+                <div class="info-employee-update">
+                  <p class="description-title">Личная информация:</p>
+                  <textarea class="employee-info-textarea" maxlength="180" [(ngModel)]="parametersUpdate.description">{{parametersUpdate?.description}}</textarea>
+                </div>
+              </div>
+                <div class="employee-contact-info">
+                    <div class="info-employee-contacts" *ngIf="!update">
+                        <div class="contact-info-title">
+                            <p>Контакты:</p>
+                        </div>
+                        <div class="contact-info contact-info-email">
+                            <img src="{{host}}static/img/envelope.svg">
+                            <p *ngIf="contacts.email">{{contacts?.email}}</p>
+                            <p *ngIf="contacts.email == null || contacts.email == ''">email не указан</p>
+                        </div>
+                        <div class="contact-info contact-info-phone">
+                            <img src="{{host}}static/img/telephone.svg">
+                          <p *ngIf="contacts.phone_number">{{contacts?.phone_number}}</p>
+                          <p *ngIf="contacts.phone_number == null || contacts.phone_number == ''">номер не указан</p>
+                        </div>
+                    </div>
+                  <div class="info-employee-contacts-update" *ngIf="update">
+                    <div class="contact-info-title">
+                      <p>Контакты:</p>
+                    </div>
+                    <div class="contact-info contact-info-email">
+                      <img src="{{host}}static/img/envelope.svg">
+                      <input type="email" pattern="[a-zA-Z_\.0-9]+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,7}" placeholder="{{contacts?.email}}" [(ngModel)]="parametersUpdate.email" />
+                    </div>
+                    <div class="contact-info contact-info-phone">
+                      <img src="{{host}}static/img/telephone.svg">
+                      <input type="tel" pattern="\+7\([0-9]{3}\)-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="+7(999)-999-99-99" [(ngModel)]="parametersUpdate.phone_number"/>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      <div *ngIf="check_confirm_email == true">
+        <div class="main-middle">
+            <div class="middle-header">
+                <p>Личные параметры</p>
+            </div>
+            <div class="middle-content" *ngIf="!update">
+                <div class="elem-middle-content">
+                    <p>Рост(см):</p><p class="content-data">{{parameters?.growth}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Размер одежды:</p><p class="content-data">{{parameters?.clothsize}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Обхват груди(см):</p><p class="content-data">{{parameters?.chestsize}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Обхват талии(см):</p><p class="content-data">{{parameters?.waistsize}}</p>
+                </div>
+            </div>
+            <div class="middle-content-update" *ngIf="update">
+              <div class="elem-middle-content-update left-col" >
+                <p>Рост(см): <input type="number" placeholder={{parameters?.growth}} [(ngModel)]="parametersUpdate.growth" class="form-control" /></p>
+              </div>
+              <div class="elem-middle-content-update left-col">
+                <p>Размер одежды: <input type="number" placeholder={{parameters?.clothsize}} [(ngModel)]="parametersUpdate.clothsize" class="form-control" /></p>
+              </div>
+              <div class="elem-middle-content-update left-col">
+                <p>Обхват груди(см): <input type="number" placeholder={{parameters?.chestsize}} [(ngModel)]="parametersUpdate.chestsize" class="form-control" /></p>
+              </div>
+              <div class="elem-middle-content-update left-col">
+                <p>Обхват талии(см): <input type="number" placeholder={{parameters?.waistsize}} [(ngModel)]="parametersUpdate.waistsize" class="form-control" /></p>
+              </div>
+            </div>
+            <div class="middle-content" *ngIf="!update">
+                <div class="elem-middle-content">
+                    <p>Обхват бедер(см):</p><p class="content-data">{{parameters?.thighsize}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Размер обуви:</p><p class="content-data">{{parameters?.footsize}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Обхват шеи(см):</p><p class="content-data">{{parameters?.necksize}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Обхват головы(см):</p><p class="content-data">{{parameters?.headsize}}</p>
+                </div>
+            </div>
+            <div class="middle-content-update" *ngIf="update">
+              <div class="elem-middle-content-update">
+                <p>Обхват бедер(см): <input type="number" placeholder={{parameters?.thighsize}} [(ngModel)]="parametersUpdate.thighsize" class="form-control" />
+                </p>
+              </div>
+              <div class="elem-middle-content-update">
+                <p>Размер обуви(см): <input type="number" placeholder={{parameters?.footsize}} [(ngModel)]="parametersUpdate.footsize" class="form-control" /></p>
+              </div>
+              <div class="elem-middle-content-update">
+                <p>Обхват шеи(см): <input type="number" placeholder={{parameters?.necksize}} [(ngModel)]="parametersUpdate.necksize" class="form-control" /></p>
+              </div>
+              <div class="elem-middle-content-update">
+                <p>Обхват головы(см): <input type="number" placeholder={{parameters?.headsize}} [(ngModel)]="parametersUpdate.headsize" class="form-control" /></p>
+              </div>
+            </div>
+            <div class="middle-content" *ngIf="!update">
+                <div class="elem-middle-content">
+                    <div class="piercing">
+                        <p>Пирсинг:</p>
+                        <p class="content-data" *ngIf="parameters?.piercing == true">Да</p>
+                        <p class="content-data" *ngIf="parameters?.piercing == false">Нет</p>
+                    </div>
+                </div>
+                <div class="elem-middle-content">
+                    <div class="tatu">
+                        <p>Тату:</p>
+                        <p class="content-data" *ngIf="parameters?.tatu == true">Да</p>
+                        <p class="content-data" *ngIf="parameters?.tatu == false">Нет</p>
+                    </div>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Тип внешности:</p><p class="content-data">{{parameters?.appearancetype?.name}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Цвет волос:</p><p class="content-data">{{parameters?.haircolor?.name}}</p>
+                </div>
+            </div>
+          <div class="middle-content-update" *ngIf="update">
+            <div class="elem-middle-content-update">
+              <div class="piercing">
+                <p>Пирсинг: </p>
+                <input class="checbox-update" type="checkbox" [(ngModel)]="parametersUpdate.piercing" />
+              </div>
+            </div>
+            <div class="elem-middle-content-update">
+              <div class="tatu">
+                <p>Тату: </p>
+                <input class="checbox-update" type="checkbox" [(ngModel)]="parametersUpdate.tatu" />
+              </div>
+            </div>
+            <div class="elem-middle-content-update">
+              <p>Тип внешности:     <select [(ngModel)]="parametersUpdate.appearancetype" ><option *ngFor="let appearancetype of appearancetypes" value="{{appearancetype?.id}}">{{appearancetype?.name}}</option></select>
+              </p>
+            </div>
+            <div class="elem-middle-content-update">
+              <p>Цвет волос:     <select [(ngModel)]="parametersUpdate.haircolor"><option *ngFor="let haircolor of haircolors" value="{{haircolor?.id}}">{{haircolor?.name}}</option></select>
+              </p>
+            </div>
+            </div>
+            <div class="middle-content" *ngIf="!update">
+                <div class="elem-middle-content">
+                    <p>Цвет глаз:</p><p class="content-data">{{parameters?.eyecolor?.name}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Город:</p><p class="content-data">{{parameters?.city?.name}}</p>
+                </div>
+                <div class="elem-middle-content">
+                    <p>Профиль:</p><p *ngFor="let type of parameters.employmenttype| slice:0:1" class="content-data">{{type.name}}</p>
+                </div>
+                <div class="elem-middle-content"><p class="content-data"></p>
+                </div>
+            </div>
+          <div class="middle-content-update" *ngIf="update">
+            <div class="elem-middle-content-update">
+              <p>Цвет глаз      <select [(ngModel)]="parametersUpdate.eyecolor"><option *ngFor="let eyecolor of eyecolors" value="{{eyecolor?.id}}">{{eyecolor?.name}}</option></select>
+              </p>
+            </div>
+            <div class="elem-middle-content-update">
+              <p>Город:     <select [(ngModel)]="parametersUpdate.city"><option *ngFor="let city of citys" value="{{city?.id}}">{{city?.name}}</option></select>
+              </p>
+            </div>
+            <div class="elem-middle-content-update">
+              <p >Профиль:   <select [(ngModel)]="parametersUpdate.employmenttype"><option *ngFor="let employmenttype of employmenttypes" value="{{employmenttype?.id}}">{{employmenttype?.name}}</option></select>
+              </p>
+            </div>
+            <div class="elem-middle-content-update">
+            </div>
+          </div>
+        </div>
+        <div class="photo-content">
+            <p class="photo-title">Фотографии</p>
+            <p class="photo-path" (click)="open_Photo()" *ngIf="photos?.length <= 4">Всего ({{photos.length}}) фото</p>
+            <p class="photo-full" (click)="open_Photo()" *ngIf="photos?.length > 4 && path_photo">Показать все фото ({{photos.length}})</p>
+            <p class="photo-full" (click)="open_Photo()" *ngIf="photos?.length > 4 && !path_photo">Скрыть все фото</p>
+        </div>
+        <div class="photo-content-box-path" *ngIf="path_photo" >
+          <div class="photo-elem-box" *ngFor="let photo of photos | slice:0:4" >
+            <img [src]="photo?.photo" >
+          </div>
+        </div>
+        <div class="photo-content-box" *ngIf="!path_photo">
+          <div class="photo-elem-box" *ngFor="let photo of photos" >
+            <img [src]="photo?.photo" >
+          </div>
+        </div>
+        <div class="add_photo">
+          <div class="photo-but-photo-wrapp">
+          <input class="photo-but-photo" type="file" (change)="AddPhotoEvent($event)">
+          <div class="add_photo_but">
+            <p>+ Добавить фото</p>
+          </div>
+          </div>
+        </div>
+        <div class="portfolio-main">
+            <div class="portfolio-text">
+                <p class="portfolio-title">Портфолио</p>
+                <p class="portfolio-count">Всего ({{portfolios.length}}) {{portfolios.length | portfolio}}  </p>
+            </div>
+            <div class="portfolio-elem" *ngFor="let portfolio of portfolios">
+                <div class="path-portfolio-info portfolio-date">
+                    <p>{{portfolio?.start_date}} - {{portfolio?.finish_date}}</p>
+                </div>
+                <div class="path-portfolio-info portfolio-name">
+                    <p>{{portfolio?.name}}</p>
+                </div>
+                <div class="path-portfolio-info portfolio-description">
+                    <p>{{portfolio?.description}}</p>
+                </div>
+            </div>
+            <div class="portfolio_form_wrap" [ngClass]="{visible:portfolio_form}">
+              <div class="elem-new-portfolio">
+                <p class="date_start_portfolio_p">Начало съемки:</p>
+                <input class="new_portfolio_input date_start_portfolio" type="date" [(ngModel)]="new_portfolio_data.start_date">
+              </div>
+              <div class="elem-new-portfolio">
+                <p class="date_finish_portfolio_p">Окончание съемки:</p>
+                <input class="new_portfolio_input date_finish_portfolio" type="date" [(ngModel)]="new_portfolio_data.finish_date">
+              </div>
+              <div class="elem-new-portfolio">
+                <p class="name_portfolio_p">Название съемки:</p>
+                <input class="new_portfolio_input name_portfolio" type="text" [(ngModel)]="new_portfolio_data.name">
+              </div>
+              <div class="elem-new-portfolio">
+                <p class="role_portfolio_p">Исполняемая роль:</p>
+                <input class="new_portfolio_input role_portfolio" type="text" [(ngModel)]="new_portfolio_data.description">
+              </div>
+            </div>
+            <div class="add_portfolio" *ngIf="portfolio_form">
+              <div class="add_portfolio_but" (click)="open_form_portfolio()">
+                <p>+ Добавить съемку</p>
+              </div>
+            </div>
+            <div class="close_portfolio" *ngIf="portfolio_form == false">
+              <div class="hide_portfolio_form_but">
+                <div class="but_create" (click)="submit_portfolio(new_portfolio_data)">
+                  <p>Добавить</p>
+                </div>
+                <div class="but_close" (click)="open_form_portfolio()">
+                  <p>Скрыть</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+      <div class="main-confirm" *ngIf="check_confirm_email == false">
+        <p class="confirm-title">Подтверждение аккаунта</p>
+        <p class="confirm-text">
+          Мы отправили вам на почту письмо с кодом подтверждения аккаунта. Подтверждение аккаунта
+          позволит вам добавить ваши параметры, фото и заполнить портфолио, а также отправлять заявки и принимать приглашения на роли.
+          Для подверждения аккаунта введите в следующее поле код из письма и нажмите кнопку "Подтвердить аккаунт"
+        </p>
+        <input  type="text" name="code_confirm" required pattern="[A-Za-z0-9\-]{36}" placeholder="Код подтверждения" [(ngModel)]="code_confirm_email" class="confirm_account_input" #code_confirm="ngModel">
+        <button  class="confirm_account_but" type="submit" [disabled]="code_confirm.invalid" (click)="send_confirm_code(code_confirm_email)">
+          Подтвердить аккаунт
+        </button>
+      </div>
+    </div>
+</div>
+

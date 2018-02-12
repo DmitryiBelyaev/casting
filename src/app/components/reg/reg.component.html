@@ -1,0 +1,27 @@
+<div class="background-layer"></div>
+<div class="reg-wrapper">
+  <p class="title">Регистрация</p>
+  <div class="radio-wrapp">
+    <input class="radio-button radio-employee" id="radio-employee"  [value]="true" type="radio" [(ngModel)]="type"/>
+    <label class="radio-label radio-label-employee" for="radio-employee"><p>Я-Актер</p></label>
+    <input class="radio-button radio-employer" id="radio-employer" [value]="false" type="radio" [(ngModel)]="type"/>
+    <label class="radio-label radio-label-employer" for="radio-employer"><p>Я-Режиссер</p></label>
+  </div>
+  <input class="input-data email" type="email" required pattern="[a-zA-Z_\.0-9]+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,7}" name="username" placeholder="Электронная почта" [(ngModel)]="user.username" #username="ngModel"/>
+  <input class="input-data fullname" name="fullname" required pattern="[а-яА-Яa-zA-Z-]{2,}\s+[а-яА-Яa-zA-Z-]{2,}" placeholder="Имя и фамилия" [(ngModel)]="user.full_name" #fullname="ngModel"/>
+  <input class="input-data passwd" type="password" required pattern="[a-zA-Z0-9]{6,}" name="password" placeholder="Пароль (не менее 6-ти символов)" [(ngModel)]="user.password" #password="ngModel"/>
+  <div class="confirm-passwd-wrapp">
+    <input class="input-data confirm-passwd" type="password" name="confirm-password" placeholder="Повторите пароль" [(ngModel)]="user.confirm_password" />
+    <img *ngIf="user.password == user.confirm_password && user.password != '' && user.password != null" class="confirm-passwd-ok" src="{{host}}static/img/checkmark.png">
+  </div>
+  <div class="error-wrap">
+    <p class="error" *ngIf="done == false">Пользователь с этим адресом электронной почты<br>уже зарегистрирован</p>
+  </div>
+  <button [disabled]="username.invalid || fullname.invalid || password.invalid || user.password != user.confirm_password" class="enter" (click)="submit(user, type)">Зарегистрироваться</button>
+  <p *ngIf="type == true" class="little-text">Не забудьте заполнить
+    <span class="little-text-span">личную информацию и<br>
+    контакты </span>после того, как зарегистрируетесь и<br>войдете в систему в первый раз.</p>
+  <p *ngIf="type == false" class="little-text">Не забудьте
+    <span class="little-text-span">оплатить подписку</span> после того, как<br>
+    зарегистрируетесь и войдете в систему в первый<br>раз, чтобы видеть контакты актеров.</p>
+</div>

@@ -1,0 +1,29 @@
+<div class="main-request-list">
+    <div class="content-request-list" *ngFor="let casting_item of castingData " >
+        <p class="casting-name" [routerLink]="['/employer/castingDetail', casting_item?.id]">{{casting_item?.name}}</p>
+        <p class="casting-date">{{casting_item?.date | date_converter}}</p>
+        <img class="casting-location-img" src="{{host}}static/img/placeholder-filled-point.svg">
+        <p class="casting-location">{{casting_item?.address}}</p>
+        <div class="casting-description-wrapp" [routerLink]="['/employer/castingDetail', casting_item?.id]">
+            <p class="casting-description">{{casting_item?.description}}</p>
+        </div>
+        <div *ngFor="let role of casting_item?.role_set" class="bot-content-request-list" (click)="open_window_role(role.id, role.name);open_close_window()">
+            <p class="elem-bot-content-name">{{role.name}}</p>
+            <p *ngIf="role?.request_set?.length > 1 && role?.request_set?.length < 5" class="elem-bot-content-counter">(всего {{role?.request_set?.length}} заявки)</p>
+            <p *ngIf="role?.request_set?.length == 1" class="elem-bot-content-counter">(всего {{role?.request_set?.length}} заявка)</p>
+            <p *ngIf="role?.request_set?.length == 0 || role?.request_set?.length > 4" class="elem-bot-content-counter">(всего {{role?.request_set?.length}} заявок)</p>
+            <div *ngFor="let request of role?.request_set | slice:0:5" class="bot-content-request-list-img-back">
+                <img [src]="request?.employee?.avatar">
+            </div>
+        </div>
+    </div>
+  <div class="footer" *ngIf="check_more">
+    <p class="footer-text"  (click)="more()">показать еще</p>
+  </div>
+  <div class="footer"  *ngIf="check_more == false" style="background: transparent">
+
+  </div>
+</div>
+<div [ngClass]="{invisible: visibility}" (click)="open_close_window()" class="overlay-requestlist"></div>
+<app-casting-request-detail-employee-app class="app-casting-request-detail-employee-app" [role_name]="request_role_name" [role_id]="request_role_id" [ngClass]="{invisible: visibility}" ></app-casting-request-detail-employee-app>
+

@@ -1,0 +1,53 @@
+<div class="main-invite-list">
+    <div class="content-invite-list" *ngFor="let invite of invitesData">
+      <div class="photo-casting">
+        <img [src]="invite['castingDetail']?.image">
+      </div>
+      <div class="other-invite-info">
+            <p [routerLink]="['/employee/castingDetail', invite['castingDetail']?.id]" class="casting-info-casting-name">{{invite['castingDetail']?.name}}</p>
+            <p class="invite-on-role">Вы подали заявку на</p>
+            <p class="casting-info-role-name">"{{invite['roleDetail']?.name}}"</p>
+
+            <div class="status-info" *ngIf="invite['statusDetail']?.status_id == 33">
+            <div class="status-img color1"  >
+              <!--<img src="{{host}}static/img/ok.png">-->
+            </div>
+            <p class="status-text">Заявка принята</p>
+            </div>
+
+
+            <div class="status-info" *ngIf="invite['statusDetail']?.status_id == 0">
+              <div class="status-img color2"  >
+                <!--<img src="{{host}}static/img/ok.png">-->
+              </div>
+              <p class="status-text">Заявка отправлена</p>
+            </div>
+
+            <div class="status-info" *ngIf="invite['statusDetail']?.status_id == 22">
+              <div class="status-img color3"  >
+                <!--<img src="{{host}}static/img/ok.png">-->
+              </div>
+              <p class="status-text">Заявка отклонена</p>
+            </div>
+
+            <div class="status-info" *ngIf="invite['statusDetail']?.status_id == 11">
+              <div class="status-img color4"  >
+                <!--<img src="{{host}}static/img/ok.png">-->
+              </div>
+              <p class="status-text">Заявка отменена</p>
+            </div>
+
+
+
+            <div *ngIf="invite['statusDetail']?.status_id != 11" class="button-cancel">
+                <p class="button-cancel-text" (click)="changeStatus(invite, 11)">Отменить</p>
+            </div>
+      </div>
+    </div>
+  <div class="footer" *ngIf="next">
+    <p class="footer-text"  (click)="more()">показать еще</p>
+  </div>
+  <div class="footer"  *ngIf="next == null" style="background: transparent">
+
+  </div>
+</div>

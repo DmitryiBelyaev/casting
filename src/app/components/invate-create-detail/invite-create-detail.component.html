@@ -1,0 +1,19 @@
+<div class="invite-wrapp">
+  <p class="title">Выберите съемку и роль</p>
+  <select class=" select-elem select-casting" [(ngModel)] = "casting_id" (change)="select_casting(casting_id)">
+    <option value="999" disabled>Выберите кастинг</option>
+    <option *ngFor="let castingelem of casting" value="{{castingelem?.id}}"> {{castingelem?.name}}</option>
+  </select>
+  <select class="select-elem select-roles select-roles-disabled" disabled *ngIf="roles == null" [value]="0">
+    <option value="0">Выберите роль</option>
+  </select>
+  <select class="select-elem select-roles" *ngIf="roles" [(ngModel)]="invite.role">
+    <option value="null">Выберите роль</option>
+    <option *ngFor="let role of roles" value="{{role?.id}}">{{role?.name}}</option>
+  </select>
+  <button *ngIf="roles && invite.role != 'null'" class="invite-but" (click)="submit(invite)">+ Пригласить</button>
+  <button disabled *ngIf="roles == null || invite?.role == 'null'" class="invite-but invite-but-disabled" (click)="submit(invite)">+ Пригласить</button>
+</div>
+
+
+

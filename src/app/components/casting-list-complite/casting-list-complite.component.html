@@ -1,0 +1,22 @@
+<div *ngIf="castingInfos?.length > 0">
+<div class="casting-element" *ngFor="let castingInfo of castingInfos" >
+    <img class="casting-element-img" [src]=castingInfo?.image [routerLink]="['/employer/castingDetail', castingInfo?.id]">
+    <div class="casting-element-info">
+        <p class="casting-name">{{castingInfo?.name}}</p>
+        <p *ngIf="castingInfo.date" class="casting-date">{{castingInfo?.date | date_converter}}</p>
+        <p *ngIf="castingInfo.date == null" class="casting-date">Дата не указана</p>
+        <img class="casting-location-img" src="{{host}}static/img/placeholder-filled-point.svg">
+        <p *ngIf="castingInfo.address" class="casting-location">{{castingInfo?.address}}</p>
+        <p *ngIf="castingInfo.address == null" class="casting-location">Адрес не указан</p>
+        <p class="casting-description" [routerLink]="['/employer/castingDetail', castingInfo?.id]">{{castingInfo?.description}}</p>
+        <p class="casting-count-title">Всего</p>
+        <p class="casting-count-text">{{castingInfo?.role_set.length}} {{castingInfo?.role_set.length | plural }}</p>
+        <p class="casting-detail-link" [routerLink]="['/employer/castingDetail', castingInfo?.id]">Подробнее</p>
+    </div>
+</div>
+</div>
+<div class="casting-element-empty" *ngIf="castingInfos?.length == 0">
+  <p>Для завершения кастинга у вас на странице, нажмите на кнопку завершить кастинг на странице просмотра кастинга,
+  страница просмотра кастинга станет доступна после создания кастинга.
+    Для перехода на страницу просмотра кастинга нажмите изображение кастинга</p>
+</div>

@@ -1,0 +1,56 @@
+<div class="main-invite-list">
+    <div class="content-invite-list" *ngFor="let invite of invitesData">
+        <div class="content-invite-img-wrapp">
+            <img [routerLink]="['/employer/employeeDetail', invite['employeeDetail']?.id ]" [src]="invite['employeeDetail']?.avatar">
+        </div>
+        <div class="content-invite-text">
+            <p class="employee-name">{{invite['employeeDetail']?.first_name}} {{invite['employeeDetail']?.last_name}}</p>
+            <p class="invite-on-role">приглашен на</p>
+          <div>
+            <p class="casting-info-role-name">"{{invite['roleDetail']?.name}}" из&nbsp;</p>
+          </div>
+            <!--<p class="quotes">"</p>-->
+            <p class="casting-info-casting-name" [routerLink]="['/employer/castingDetail', invite['castingDetail']?.id]">"{{invite['castingDetail']?.name}}"</p>
+            <!--<p class="quotes">"</p>-->
+          <div class="status-info" *ngIf="invite['statusDetail']?.status_id == 33">
+            <div class="status-img color1"  >
+              <!--<img src="{{host}}static/img/ok.png">-->
+            </div>
+            <p class="status-text">Заявка принята</p>
+          </div>
+
+
+          <div class="status-info" *ngIf="invite['statusDetail']?.status_id == 0">
+            <div class="status-img color2"  >
+              <!--<img src="{{host}}static/img/ok.png">-->
+            </div>
+            <p class="status-text">Заявка отправлена</p>
+          </div>
+
+          <div class="status-info" *ngIf="invite['statusDetail']?.status_id == 22">
+            <div class="status-img color3"  >
+              <!--<img src="{{host}}static/img/ok.png">-->
+            </div>
+            <p class="status-text">Заявка отклонена</p>
+          </div>
+
+          <div class="status-info" *ngIf="invite['statusDetail']?.status_id == 11">
+            <div class="status-img color4"  >
+              <!--<img src="{{host}}static/img/ok.png">-->
+            </div>
+            <p class="status-text">Заявка отменена</p>
+          </div>
+
+          <div *ngIf="invite['statusDetail']?.status_id != 11" class="button-cancel">
+                <p class="button-cancel-text" (click)="changeStatus(invite)">Отменить</p>
+            </div>
+        </div>
+    </div>
+  <div class="footer" *ngIf="next">
+    <p class="footer-text"  (click)="more()">показать еще</p>
+  </div>
+  <div class="footer"  *ngIf="next == null" style="background: transparent">
+
+  </div>
+</div>
+

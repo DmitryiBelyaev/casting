@@ -1,0 +1,12 @@
+<div class="auth-wrapper">
+  <form>
+    <p class="title">Вход в систему</p>
+    <input class="input-data email" required pattern="[a-zA-Z_\.0-9]+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,7}" name="username" placeholder="Электронная почта" [(ngModel)]="user.username" #username="ngModel" />
+    <input class="input-data passwd" required pattern="[a-zA-Z0-9]{6,}" type="password" name="password" placeholder="Пароль" [(ngModel)]="user.password" #password="ngModel"/>
+    <div class="error-wrap">
+      <p class="error" *ngIf="done == false">Неправильный адрес электронной почты<br>или пароль</p>
+    </div>
+    <button class="enter" [disabled]="username.invalid || password.invalid" type="submit" (click)="submit(user)">Войти</button>
+  </form>
+</div>
+<div class="background-layer"></div>

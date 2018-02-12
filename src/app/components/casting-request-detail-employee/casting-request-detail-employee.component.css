@@ -1,0 +1,160 @@
+p, span, button, a{
+  font-family: 'Open Sans', sans-serif;
+}
+.main-request-detail{
+  height: 550px;
+  width: 985px;
+  background: white;
+  padding-top: 35px;
+  padding-left: 40px;
+  padding-right: 10px;
+  padding-bottom: 35px;
+  border-radius: 30px;
+}
+
+.main-content-request-detail{
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.text-request-detail{
+  height: 30px;
+  width: 100%;
+}
+
+.text-request-detail p{
+  font-weight: bold;
+}
+
+.elem-content-request-detail{
+  position: relative;
+  margin-right: 35px;
+  width: 150px;
+  height: 190px;
+  float: left;
+  margin-top: 30px;
+}
+
+.elem-content{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+.elem-img{
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  overflow: hidden;
+  margin: auto;
+  cursor: pointer;
+}
+.elem-img:focus, .elem-img:active, .elem-img:visited{
+  outline: none;
+}
+.elem-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 60px;
+  display: block;
+}
+
+.elem-text{
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  padding-top: 8px;
+}
+.elem-text p{
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+.first-text{
+  font-size: 10pt;
+}
+.last-text{
+  font-size: 10pt;
+}
+
+.invite{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #0ec5f1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.renouncement{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 35px;
+}
+
+.invite img{
+  width: 11px;
+  height: 11px;
+  display: block;
+  margin: auto;
+  margin-top: 12px;
+  filter: invert(100%);
+}
+
+.renouncement img{
+  width: 10px;
+  height: 10px;
+  display: block;
+  margin: auto;
+  margin-top: 12px;
+  filter: invert(100%)
+}
+.invite:hover{
+  cursor: pointer;
+}
+
+.renouncement:hover{
+  cursor: pointer;
+}
+.rating{
+  height: 45px;
+  width: 40px;
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  text-align: center;
+}
+
+.rating img{
+  height: 45px;
+  width: 40px;
+}
+
+.rating p{
+  color: white;
+  font-size: 9pt;
+  margin-top: -30px;
+  font-weight: bold;
+
+}
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  border-width:0;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #cccccc;
+}
